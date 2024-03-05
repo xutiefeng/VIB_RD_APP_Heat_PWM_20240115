@@ -1,0 +1,1882 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; ------------------------------------------------------
+                       ---------------------------------
+    2 00000000         ;  @file:    startup_S32K116.s
+    3 00000000         ;  @purpose: ARM Compiler Collection Startup File
+    4 00000000         ;            S32K116
+    5 00000000         ;  @version: 2.0
+    6 00000000         ;  @date:    2017-1-10
+    7 00000000         ;  @build:   b170107
+    8 00000000         ; ------------------------------------------------------
+                       ---------------------------------
+    9 00000000         ;
+   10 00000000         ; Copyright (c) 1997 - 2016 , Freescale Semiconductor, I
+                       nc.
+   11 00000000         ; Copyright 2016-2017 NXP
+   12 00000000         ; All rights reserved.
+   13 00000000         ;
+   14 00000000         ; THIS SOFTWARE IS PROVIDED BY NXP "AS IS" AND ANY EXPRE
+                       SSED OR
+   15 00000000         ; IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+                        IMPLIED WARRANTIES
+   16 00000000         ; OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOS
+                       E ARE DISCLAIMED.
+   17 00000000         ; IN NO EVENT SHALL NXP OR ITS CONTRIBUTORS BE LIABLE FO
+                       R ANY DIRECT,
+   18 00000000         ; INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUEN
+                       TIAL DAMAGES
+   19 00000000         ; (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTIT
+                       UTE GOODS OR
+   20 00000000         ; SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS I
+                       NTERRUPTION)
+   21 00000000         ; HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+                        IN CONTRACT,
+   22 00000000         ; STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTH
+                       ERWISE) ARISING
+   23 00000000         ; IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF AD
+                       VISED OF
+   24 00000000         ; THE POSSIBILITY OF SUCH DAMAGE.
+   25 00000000         ;*******************************************************
+                       ********************
+   26 00000000         ; Version: ARMC Compiler Collection
+   27 00000000         ;*******************************************************
+                       ********************
+   28 00000000         
+   29 00000000         
+   30 00000000                 PRESERVE8
+   31 00000000                 THUMB
+   32 00000000         
+   33 00000000         
+   34 00000000         ; Vector Table Mapped to Address 0 at Reset
+   35 00000000         
+   36 00000000                 AREA             |.text|, CODE, READONLY
+   37 00000000                 EXPORT           __VECTOR_TABLE
+   38 00000000         
+   39 00000000                 EXPORT           __RAM_VECTOR_TABLE_SIZE
+   40 00000000                 EXPORT           __VECTOR_RAM
+   41 00000000                 EXPORT           __VECTOR_ROM
+   42 00000000         
+   43 00000000                 EXPORT           __BSS_START
+   44 00000000                 EXPORT           __BSS_END
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   45 00000000         
+   46 00000000                 EXPORT           __CODE_ROM
+   47 00000000                 EXPORT           __CODE_END
+   48 00000000                 EXPORT           __CODE_RAM
+   49 00000000         
+   50 00000000                 EXPORT           __DATA_ROM
+   51 00000000                 EXPORT           __DATA_END
+   52 00000000                 EXPORT           __DATA_RAM
+   53 00000000                 EXPORT           __VECTOR_ROM_START
+   54 00000000                 EXPORT           __VECTOR_ROM_END
+   55 00000000                 EXPORT           __DATA_RAM_START
+   56 00000000                 EXPORT           __DATA_RAM_END
+   57 00000000                 EXPORT           __CUSTOM_SECTION_START
+   58 00000000                 EXPORT           __CUSTOM_SECTION_END
+   59 00000000                 EXPORT           __CODE_RAM_START
+   60 00000000                 EXPORT           __CODE_RAM_END
+   61 00000000         
+   62 00000000                 EXPORT           __RAM_START
+   63 00000000                 EXPORT           __RAM_END
+   64 00000000         
+   65 00000000                 IMPORT           init_data_bss
+   66 00000000                 IMPORT           main
+   67 00000000                 IMPORT           __main
+   68 00000000                 IMPORT           |Image$$ARM_LIB_STACK$$ZI$$Limi
+t|
+   69 00000000                 IMPORT           |Image$$RW_m_data_2$$ZI$$Base|
+   70 00000000                 IMPORT           |Image$$RW_m_data_2$$ZI$$Limit|
+   71 00000000         
+   72 00000000                 IMPORT           |Image$$ER_m_text_const$$Base|
+   73 00000000                 IMPORT           |Image$$ER_m_text_const$$Limit|
+   74 00000000         
+   75 00000000                 IMPORT           |Image$$RW_m_data$$Base|
+   76 00000000         
+   77 00000000                 IMPORT           |Image$$ER_m_text_const$$Base|
+   78 00000000                 IMPORT           |Image$$ER_m_text_const$$Limit|
+   79 00000000         
+   80 00000000                 IMPORT           |Image$$RW_m_data$$Length|
+   81 00000000                 IMPORT           |Image$$RW_m_code$$Base|
+   82 00000000                 IMPORT           |Image$$RW_m_code$$Length|
+   83 00000000                 IMPORT           |Image$$ER_m_text$$Limit|
+   84 00000000         
+   85 00000000                 IMPORT           |Image$$VECTOR_RAM$$Length|
+   86 00000000                 IMPORT           |Image$$VECTOR_RAM$$Base|
+   87 00000000         
+   88 00000000                 IMPORT           |Image$$VECTOR_ROM$$Length|
+   89 00000000                 IMPORT           |Image$$VECTOR_ROM$$Base|
+   90 00000000                 IMPORT           |Image$$RW_m_custom_section$$Ba
+se|
+   91 00000000                 IMPORT           |Image$$RW_m_custom_section$$Li
+mit|
+   92 00000000         
+   93 00000000                 IMPORT           |Image$$RW_m_data$$Limit|
+   94 00000000                 IMPORT           |Image$$RW_m_code$$Limit|
+   95 00000000                 IMPORT           |Image$$VECTOR_ROM$$Limit|
+   96 00000000         
+   97 00000000                 IMPORT           |Image$$ARM_LIB_STACK$$Limit|
+   98 00000000         
+   99 00000000 00000000 
+                       __RAM_VECTOR_TABLE_SIZE
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+                               DCD              |Image$$VECTOR_ROM$$Length|
+  100 00000004 00000000 
+                       __VECTOR_RAM
+                               DCD              |Image$$VECTOR_RAM$$Base|
+  101 00000008 00000000 
+                       __VECTOR_ROM
+                               DCD              |Image$$VECTOR_ROM$$Base|
+  102 0000000C 00000000 
+                       __VECTOR_ROM_START
+                               DCD              |Image$$VECTOR_ROM$$Base|
+  103 00000010 00000000 
+                       __VECTOR_ROM_END
+                               DCD              |Image$$VECTOR_ROM$$Limit|
+  104 00000014         
+  105 00000014 00000000 
+                       __CODE_ROM
+                               DCD              |Image$$RW_m_data$$Length|+ |Im
+age$$ER_m_text$$Limit|
+  106 00000018 00000000 
+                       __CODE_END
+                               DCD              |Image$$RW_m_data$$Length|+ |Im
+age$$ER_m_text$$Limit| + |Image$$RW_m_code$$Length|
+  107 0000001C 00000000 
+                       __CODE_RAM
+                               DCD              |Image$$RW_m_code$$Base|
+  108 00000020 00000000 
+                       __CODE_RAM_START
+                               DCD              |Image$$RW_m_code$$Base|
+  109 00000024 00000000 
+                       __CODE_RAM_END
+                               DCD              |Image$$RW_m_code$$Limit|
+  110 00000028         
+  111 00000028 00000000 
+                       __BSS_START
+                               DCD              |Image$$RW_m_data_2$$ZI$$Base|
+  112 0000002C 00000000 
+                       __BSS_END
+                               DCD              |Image$$RW_m_data_2$$ZI$$Limit|
+  113 00000030         
+  114 00000030 00000000 
+                       __DATA_RAM
+                               DCD              |Image$$RW_m_data$$Base|
+  115 00000034 00000000 
+                       __DATA_RAM_START
+                               DCD              |Image$$RW_m_data$$Base|
+  116 00000038 00000000 
+                       __DATA_RAM_END
+                               DCD              |Image$$RW_m_data$$Limit|
+  117 0000003C 00000000 
+                       __DATA_ROM
+                               DCD              |Image$$ER_m_text$$Limit|
+  118 00000040 00000000 
+                       __DATA_END
+                               DCD              |Image$$RW_m_data$$Length|+ |Im
+age$$ER_m_text$$Limit|
+  119 00000044 00000000 
+                       __CUSTOM_SECTION_START
+                               DCD              |Image$$RW_m_custom_section$$Ba
+se|
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+  120 00000048 00000000 
+                       __CUSTOM_SECTION_END
+                               DCD              |Image$$RW_m_custom_section$$Li
+mit|
+  121 0000004C         
+  122 0000004C 00000000 
+                       __RAM_START
+                               DCD              |Image$$VECTOR_RAM$$Base|
+  123 00000050         ;__RAM_END   DCD |Image$$ARM_LIB_STACK$$Limit|  不初�
+                       �化堆栈区将导致HardFault, 修改初始化结束�
+                       �号
+  124 00000050 00000000 
+                       __RAM_END
+                               DCD              |Image$$ARM_LIB_STACK$$ZI$$Limi
+t|
+  125 00000054         
+  126 00000054                 AREA             RESET, DATA, READONLY
+  127 00000000 00000000 
+                       __VECTOR_TABLE
+                               DCD              |Image$$ARM_LIB_STACK$$ZI$$Limi
+t| 
+                                                            ; Top of Stack
+  128 00000004 00000000        DCD              Reset_Handler ; Reset Handler
+  129 00000008 00000000        DCD              NMI_Handler ;NMI Handler
+  130 0000000C 00000000        DCD              HardFault_Handler 
+                                                            ;Hard Fault Handler
+                                                            
+  131 00000010 00000000        DCD              0           ;MPU Fault Handler
+  132 00000014 00000000        DCD              0           ;Bus Fault Handler
+  133 00000018 00000000        DCD              0           ;Usage Fault Handle
+                                                            r
+  134 0000001C 00000000        DCD              0           ;Reserved
+  135 00000020 00000000        DCD              0           ;Reserved
+  136 00000024 00000000        DCD              0           ;Reserved
+  137 00000028 00000000        DCD              0           ;Reserved
+  138 0000002C 00000000        DCD              SVC_Handler ;SVCall Handler
+  139 00000030 00000000        DCD              0           ;Debug Monitor Hand
+                                                            ler
+  140 00000034 00000000        DCD              0           ;Reserved
+  141 00000038 00000000        DCD              PendSV_Handler ;PendSV Handler
+  142 0000003C 00000000        DCD              SysTick_Handler 
+                                                            ;SysTick Handler
+  143 00000040         
+  144 00000040         ; External Interrupts
+  145 00000040 00000000        DCD              DMA0_IRQHandler ; DMA channel 0
+                                                             transfer complete
+  146 00000044 00000000        DCD              DMA1_IRQHandler ; DMA channel 1
+                                                             transfer complete
+  147 00000048 00000000        DCD              DMA2_IRQHandler ; DMA channel 2
+                                                             transfer complete
+  148 0000004C 00000000        DCD              DMA3_IRQHandler ; DMA channel 3
+                                                             transfer complete
+  149 00000050 00000000        DCD              DMA_Error_IRQHandler ; DMA erro
+                                                            r interrupt channel
+                                                            s 0-3
+  150 00000054 00000000        DCD              ERM_fault_IRQHandler ; ERM sing
+                                                            le and double bit e
+                                                            rror correction
+  151 00000058 00000000        DCD              RTC_IRQHandler ; RTC alarm inte
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+                                                            rrupt
+  152 0000005C 00000000        DCD              RTC_Seconds_IRQHandler ; RTC se
+                                                            conds interrupt
+  153 00000060 00000000        DCD              LPTMR0_IRQHandler ; LPTIMER int
+                                                            errupt request
+  154 00000064 00000000        DCD              PORT_IRQHandler ; Port A, B, C,
+                                                             D and E pin detect
+                                                             interrupt
+  155 00000068 00000000        DCD              CAN0_ORed_Err_Wakeup_IRQHandler
+ 
+                                                            ; OR’ed [Bus Off 
+                                                            OR Bus Off Done OR 
+                                                            Transmit Warning OR
+                                                             Receive Warning], 
+                                                            Interrupt indicatin
+                                                            g that errors were 
+                                                            detected on the CAN
+                                                             bus, Interrupt ass
+                                                            erted when Pretende
+                                                            d Networking operat
+                                                            ion is enabled, and
+                                                             a valid message ma
+                                                            tches the selected 
+                                                            filter criteria dur
+                                                            ing Low Power mode
+  156 0000006C 00000000        DCD              CAN0_ORed_0_31_MB_IRQHandler ; 
+                                                            OR’ed Message buf
+                                                            fer (0-15, 16-31)
+  157 00000070 00000000        DCD              FTM0_Ch0_7_IRQHandler ; FTM0 Ch
+                                                            annel 0 to 7 interr
+                                                            upt
+  158 00000074 00000000        DCD              FTM0_Fault_IRQHandler ; FTM0 Fa
+                                                            ult interrupt
+  159 00000078 00000000        DCD              FTM0_Ovf_Reload_IRQHandler ; FT
+                                                            M0 Counter overflow
+                                                             and Reload interru
+                                                            pt
+  160 0000007C 00000000        DCD              FTM1_Ch0_7_IRQHandler ; FTM1 Ch
+                                                            annel 0 to 7 interr
+                                                            upt
+  161 00000080 00000000        DCD              FTM1_Fault_IRQHandler ; FTM1 Fa
+                                                            ult interrupt
+  162 00000084 00000000        DCD              FTM1_Ovf_Reload_IRQHandler ; FT
+                                                            M1 Counter overflow
+                                                             and Reload interru
+                                                            pt
+  163 00000088 00000000        DCD              FTFC_IRQHandler ; FTFC Command 
+                                                            complete, Read coll
+                                                            ision and Double bi
+                                                            t fault detect
+  164 0000008C 00000000        DCD              PDB0_IRQHandler 
+                                                            ; PDB0 interrupt
+  165 00000090 00000000        DCD              LPIT0_IRQHandler 
+                                                            ; LPIT interrupt
+  166 00000094 00000000        DCD              SCG_CMU_LVD_LVWSCG_IRQHandler ;
+                                                             PMC Low voltage de
+                                                            tect interrupt, SCG
+                                                             bus interrupt requ
+                                                            est and CMU loss of
+
+
+
+ARM Macro Assembler    Page 6 
+
+
+                                                             range interrupt
+  167 00000098 00000000        DCD              WDOG_IRQHandler ; WDOG interrup
+                                                            t request out befor
+                                                            e wdg reset out
+  168 0000009C 00000000        DCD              RCM_IRQHandler ; RCM Asynchrono
+                                                            us Interrupt
+  169 000000A0 00000000        DCD              LPI2C0_Master_Slave_IRQHandler 
+                                                            ; LPI2C0 Master Int
+                                                            errupt and Slave In
+                                                            terrupt
+  170 000000A4 00000000        DCD              FLEXIO_IRQHandler 
+                                                            ; FlexIO Interrupt
+  171 000000A8 00000000        DCD              LPSPI0_IRQHandler 
+                                                            ; LPSPI0 Interrupt
+  172 000000AC 00000000        DCD              Reserved27_IRQHandler 
+                                                            ; Reserved
+  173 000000B0 00000000        DCD              ADC0_IRQHandler ; ADC0 interrup
+                                                            t request.
+  174 000000B4 00000000        DCD              CMP0_IRQHandler ; CMP0 interrup
+                                                            t request
+  175 000000B8 00000000        DCD              LPUART1_RxTx_IRQHandler ; LPUAR
+                                                            T1 Transmit / Recei
+                                                            ve  Interrupt
+  176 000000BC 00000000        DCD              LPUART0_RxTx_IRQHandler ; LPUAR
+                                                            T0 Transmit / Recei
+                                                            ve Interrupt
+  177 000000C0         __Vectors_End
+  178 000000C0         
+  179 000000C0 000000C0 
+                       __Vectors_Size
+                               EQU              __Vectors_End - __VECTOR_TABLE
+  180 000000C0         
+  181 000000C0         ; <h> Flash Configuration
+  182 000000C0         ;   <i> 16-byte flash configuration field that stores de
+                       fault protection settings (loaded on reset)
+  183 000000C0         ;   <i> and security information that allows the MCU to 
+                       restrict access to the FTFL module.
+  184 000000C0         ;   <h> Backdoor Comparison Key
+  185 000000C0         ;     <o0>  Backdoor Comparison Key 0.  <0x0-0xFF:2>
+  186 000000C0         ;     <o1>  Backdoor Comparison Key 1.  <0x0-0xFF:2>
+  187 000000C0         ;     <o2>  Backdoor Comparison Key 2.  <0x0-0xFF:2>
+  188 000000C0         ;     <o3>  Backdoor Comparison Key 3.  <0x0-0xFF:2>
+  189 000000C0         ;     <o4>  Backdoor Comparison Key 4.  <0x0-0xFF:2>
+  190 000000C0         ;     <o5>  Backdoor Comparison Key 5.  <0x0-0xFF:2>
+  191 000000C0         ;     <o6>  Backdoor Comparison Key 6.  <0x0-0xFF:2>
+  192 000000C0         ;     <o7>  Backdoor Comparison Key 7.  <0x0-0xFF:2>
+  193 000000C0 000000FF 
+                       BackDoorK0
+                               EQU              0xFF
+  194 000000C0 000000FF 
+                       BackDoorK1
+                               EQU              0xFF
+  195 000000C0 000000FF 
+                       BackDoorK2
+                               EQU              0xFF
+  196 000000C0 000000FF 
+                       BackDoorK3
+                               EQU              0xFF
+  197 000000C0 000000FF 
+
+
+
+ARM Macro Assembler    Page 7 
+
+
+                       BackDoorK4
+                               EQU              0xFF
+  198 000000C0 000000FF 
+                       BackDoorK5
+                               EQU              0xFF
+  199 000000C0 000000FF 
+                       BackDoorK6
+                               EQU              0xFF
+  200 000000C0 000000FF 
+                       BackDoorK7
+                               EQU              0xFF
+  201 000000C0         ;   </h>
+  202 000000C0         ;   <h> Program flash protection bytes (FPROT)
+  203 000000C0         ;     <i> Each program flash region can be protected fro
+                       m program and erase operation by setting the associated 
+                       PROT bit.
+  204 000000C0         ;     <i> Each bit protects a 1/32 region of the program
+                        flash memory.
+  205 000000C0         ;     <h> FPROT0
+  206 000000C0         ;       <i> Program Flash Region Protect Register 0
+  207 000000C0         ;       <i> 1/32 - 8/32 region
+  208 000000C0         ;       <o.0>   FPROT0.0
+  209 000000C0         ;       <o.1>   FPROT0.1
+  210 000000C0         ;       <o.2>   FPROT0.2
+  211 000000C0         ;       <o.3>   FPROT0.3
+  212 000000C0         ;       <o.4>   FPROT0.4
+  213 000000C0         ;       <o.5>   FPROT0.5
+  214 000000C0         ;       <o.6>   FPROT0.6
+  215 000000C0         ;       <o.7>   FPROT0.7
+  216 000000C0 00000000 
+                       nFPROT0 EQU              0x00
+  217 000000C0 000000FF 
+                       FPROT0  EQU              nFPROT0:EOR:0xFF
+  218 000000C0         ;     </h>
+  219 000000C0         ;     <h> FPROT1
+  220 000000C0         ;       <i> Program Flash Region Protect Register 1
+  221 000000C0         ;       <i> 9/32 - 16/32 region
+  222 000000C0         ;       <o.0>   FPROT1.0
+  223 000000C0         ;       <o.1>   FPROT1.1
+  224 000000C0         ;       <o.2>   FPROT1.2
+  225 000000C0         ;       <o.3>   FPROT1.3
+  226 000000C0         ;       <o.4>   FPROT1.4
+  227 000000C0         ;       <o.5>   FPROT1.5
+  228 000000C0         ;       <o.6>   FPROT1.6
+  229 000000C0         ;       <o.7>   FPROT1.7
+  230 000000C0 00000000 
+                       nFPROT1 EQU              0x00
+  231 000000C0 000000FF 
+                       FPROT1  EQU              nFPROT1:EOR:0xFF
+  232 000000C0         ;     </h>
+  233 000000C0         ;     <h> FPROT2
+  234 000000C0         ;       <i> Program Flash Region Protect Register 2
+  235 000000C0         ;       <i> 17/32 - 24/32 region
+  236 000000C0         ;       <o.0>   FPROT2.0
+  237 000000C0         ;       <o.1>   FPROT2.1
+  238 000000C0         ;       <o.2>   FPROT2.2
+  239 000000C0         ;       <o.3>   FPROT2.3
+  240 000000C0         ;       <o.4>   FPROT2.4
+  241 000000C0         ;       <o.5>   FPROT2.5
+
+
+
+ARM Macro Assembler    Page 8 
+
+
+  242 000000C0         ;       <o.6>   FPROT2.6
+  243 000000C0         ;       <o.7>   FPROT2.7
+  244 000000C0 00000000 
+                       nFPROT2 EQU              0x00
+  245 000000C0 000000FF 
+                       FPROT2  EQU              nFPROT2:EOR:0xFF
+  246 000000C0         ;     </h>
+  247 000000C0         ;     <h> FPROT3
+  248 000000C0         ;       <i> Program Flash Region Protect Register 3
+  249 000000C0         ;       <i> 25/32 - 32/32 region
+  250 000000C0         ;       <o.0>   FPROT3.0
+  251 000000C0         ;       <o.1>   FPROT3.1
+  252 000000C0         ;       <o.2>   FPROT3.2
+  253 000000C0         ;       <o.3>   FPROT3.3
+  254 000000C0         ;       <o.4>   FPROT3.4
+  255 000000C0         ;       <o.5>   FPROT3.5
+  256 000000C0         ;       <o.6>   FPROT3.6
+  257 000000C0         ;       <o.7>   FPROT3.7
+  258 000000C0 00000000 
+                       nFPROT3 EQU              0x00
+  259 000000C0 000000FF 
+                       FPROT3  EQU              nFPROT3:EOR:0xFF
+  260 000000C0         ;     </h>
+  261 000000C0         ;   </h>
+  262 000000C0         ;   <h> Data flash protection byte (FDPROT)
+  263 000000C0         ;     <i> Each bit protects a 1/8 region of the data fla
+                       sh memory.
+  264 000000C0         ;     <i> (Program flash only devices: Reserved)
+  265 000000C0         ;       <o.0>   FDPROT.0
+  266 000000C0         ;       <o.1>   FDPROT.1
+  267 000000C0         ;       <o.2>   FDPROT.2
+  268 000000C0         ;       <o.3>   FDPROT.3
+  269 000000C0         ;       <o.4>   FDPROT.4
+  270 000000C0         ;       <o.5>   FDPROT.5
+  271 000000C0         ;       <o.6>   FDPROT.6
+  272 000000C0         ;       <o.7>   FDPROT.7
+  273 000000C0 00000000 
+                       nFDPROT EQU              0x00
+  274 000000C0 000000FF 
+                       FDPROT  EQU              nFDPROT:EOR:0xFF
+  275 000000C0         ;   </h>
+  276 000000C0         ;   <h> EEPROM protection byte (FEPROT)
+  277 000000C0         ;     <i> FlexNVM devices: Each bit protects a 1/8 regio
+                       n of the EEPROM.
+  278 000000C0         ;     <i> (Program flash only devices: Reserved)
+  279 000000C0         ;       <o.0>   FEPROT.0
+  280 000000C0         ;       <o.1>   FEPROT.1
+  281 000000C0         ;       <o.2>   FEPROT.2
+  282 000000C0         ;       <o.3>   FEPROT.3
+  283 000000C0         ;       <o.4>   FEPROT.4
+  284 000000C0         ;       <o.5>   FEPROT.5
+  285 000000C0         ;       <o.6>   FEPROT.6
+  286 000000C0         ;       <o.7>   FEPROT.7
+  287 000000C0 00000000 
+                       nFEPROT EQU              0x00
+  288 000000C0 000000FF 
+                       FEPROT  EQU              nFEPROT:EOR:0xFF
+  289 000000C0         ;   </h>
+  290 000000C0         ;   <h> Flash nonvolatile option byte (FOPT)
+
+
+
+ARM Macro Assembler    Page 9 
+
+
+  291 000000C0         ;     <i> Allows the user to customize the operation of 
+                       the MCU at boot time.
+  292 000000C0         ;     <o.0> LPBOOT
+  293 000000C0         ;       <0=> Low-power boot
+  294 000000C0         ;       <1=> Normal boot
+  295 000000C0         ;     <o.1> EZPORT_DIS
+  296 000000C0         ;       <0=> EzPort operation is disabled
+  297 000000C0         ;       <1=> EzPort operation is enabled
+  298 000000C0 000000FF 
+                       FOPT    EQU              0xFF
+  299 000000C0         ;   </h>
+  300 000000C0         ;   <h> Flash security byte (FSEC)
+  301 000000C0         ;     <i> WARNING: If SEC field is configured as "MCU se
+                       curity status is secure" and MEEN field is configured as
+                        "Mass erase is disabled",
+  302 000000C0         ;     <i> MCU's security status cannot be set back to un
+                       secure state since Mass erase via the debugger is blocke
+                       d !!!
+  303 000000C0         ;     <o.0..1> SEC
+  304 000000C0         ;       <2=> MCU security status is unsecure
+  305 000000C0         ;       <3=> MCU security status is secure
+  306 000000C0         ;         <i> Flash Security
+  307 000000C0         ;     <o.2..3> FSLACC
+  308 000000C0         ;       <2=> Freescale factory access denied
+  309 000000C0         ;       <3=> Freescale factory access granted
+  310 000000C0         ;         <i> Freescale Failure Analysis Access Code
+  311 000000C0         ;     <o.4..5> MEEN
+  312 000000C0         ;       <2=> Mass erase is disabled
+  313 000000C0         ;       <3=> Mass erase is enabled
+  314 000000C0         ;     <o.6..7> KEYEN
+  315 000000C0         ;       <2=> Backdoor key access enabled
+  316 000000C0         ;       <3=> Backdoor key access disabled
+  317 000000C0         ;         <i> Backdoor Key Security Enable
+  318 000000C0 000000FE 
+                       FSEC    EQU              0xFE
+  319 000000C0         ;   </h>
+  320 000000C0         ; </h>
+  321 000000C0                 IF               :LNOT::DEF:RAM_TARGET
+  322 000000C0                 AREA             FlashConfig, DATA, READONLY
+  323 00000000         ;__FlashConfig
+  324 00000000         ;                DCB     BackDoorK0, BackDoorK1, BackDoo
+                       rK2, BackDoorK3
+  325 00000000         ;                DCB     BackDoorK4, BackDoorK5, BackDoo
+                       rK6, BackDoorK7
+  326 00000000         ;                DCB     FPROT0    , FPROT1    , FPROT2 
+                          , FPROT3
+  327 00000000         ;                DCB     FSEC      , FOPT      , FEPROT 
+                          , FDPROT
+  328 00000000                 ENDIF
+  329 00000000         
+  330 00000000         
+  331 00000000                 AREA             |.text|, CODE, READONLY
+  332 00000054         
+  333 00000054         Reset_Handler
+                               PROC
+  334 00000054                 ALIGN            4
+  335 00000054                 EXPORT           Reset_Handler             [WEAK
+]
+  336 00000054                 IMPORT           SystemInit
+
+
+
+ARM Macro Assembler    Page 10 
+
+
+  337 00000054         
+  338 00000054                 IF               :LNOT::DEF:RAM_TARGET
+  339 00000054                 REQUIRE          FlashConfig
+  340 00000054                 ENDIF
+  341 00000054         
+  342 00000054         
+  343 00000054 B672            CPSID            I           ; Mask interrupts
+  344 00000056                 IF               :LNOT::DEF:RAM_TARGET
+  345 00000056         ; Init ECC RAM
+  346 00000056 4911            LDR              R1, =__RAM_START
+  347 00000058 6809            LDR              R1, [R1]
+  348 0000005A 4A11            LDR              R2, =__RAM_END
+  349 0000005C 6812            LDR              R2, [R2]
+  350 0000005E 1A52            SUBS             R2, R1
+  351 00000060 3A01            SUBS             R2, #1
+  352 00000062 DD05            BLE              LC5
+  353 00000064         
+  354 00000064 2000            MOVS             R0, #0
+  355 00000066 2304            MOVS             R3, #4
+  356 00000068         LC4
+  357 00000068 6008            STR              R0, [R1]
+  358 0000006A 4419            ADD              R1, R1, R3
+  359 0000006C 3A04            SUBS             R2, #4
+  360 0000006E DAFB            BGE              LC4
+  361 00000070         LC5
+  362 00000070 BF00            NOP
+  363 00000072                 ENDIF
+  364 00000072         
+  365 00000072 480C            LDR              R0, =0xE000ED08
+  366 00000074 490C            LDR              R1, =__VECTOR_TABLE
+  367 00000076 6001            STR              R1, [R0]
+  368 00000078 680A            LDR              R2, [R1]
+  369 0000007A F382 8808       MSR              MSP, R2
+  370 0000007E 480B            LDR              R0, =SystemInit
+  371 00000080 4780            BLX              R0
+  372 00000082 480B            LDR              R0, =init_data_bss
+  373 00000084 4780            BLX              R0
+  374 00000086 B662            CPSIE            i           ; Unmask interrupts
+                                                            
+  375 00000088 480A            LDR              R0, =__main
+  376 0000008A 4780            BLX              R0
+  377 0000008C                 ENDP
+  378 0000008C         
+  380 0000008C         NMI_Handler
+                               PROC
+  381 0000008C                 EXPORT           NMI_Handler         [WEAK]
+  382 0000008C E7FE            B                .
+  383 0000008E                 ENDP
+  385 0000008E         HardFault_Handler
+                               PROC
+  386 0000008E                 EXPORT           HardFault_Handler         [WEAK
+]
+  387 0000008E E7FE            B                .
+  388 00000090                 ENDP
+  390 00000090         SVC_Handler
+                               PROC
+  391 00000090                 EXPORT           SVC_Handler         [WEAK]
+  392 00000090 E7FE            B                .
+  393 00000092                 ENDP
+
+
+
+ARM Macro Assembler    Page 11 
+
+
+  395 00000092         PendSV_Handler
+                               PROC
+  396 00000092                 EXPORT           PendSV_Handler         [WEAK]
+  397 00000092 E7FE            B                .
+  398 00000094                 ENDP
+  400 00000094         SysTick_Handler
+                               PROC
+  401 00000094                 EXPORT           SysTick_Handler         [WEAK]
+  402 00000094 E7FE            B                .
+  403 00000096                 ENDP
+  405 00000096         DefaultISR
+                               PROC
+  406 00000096                 EXPORT           DefaultISR         [WEAK]
+  407 00000096 E7FE            B                .
+  408 00000098                 ENDP
+  409 00000098         Default_Handler
+                               PROC
+  410 00000098                 EXPORT           DMA0_IRQHandler        [WEAK]
+  411 00000098                 EXPORT           DMA1_IRQHandler        [WEAK]
+  412 00000098                 EXPORT           DMA2_IRQHandler        [WEAK]
+  413 00000098                 EXPORT           DMA3_IRQHandler        [WEAK]
+  414 00000098                 EXPORT           DMA_Error_IRQHandler        [WE
+AK]
+  415 00000098                 EXPORT           ERM_fault_IRQHandler        [WE
+AK]
+  416 00000098                 EXPORT           RTC_IRQHandler        [WEAK]
+  417 00000098                 EXPORT           RTC_Seconds_IRQHandler        [
+WEAK]
+  418 00000098                 EXPORT           LPTMR0_IRQHandler        [WEAK]
+  419 00000098                 EXPORT           PORT_IRQHandler        [WEAK]
+  420 00000098                 EXPORT           CAN0_ORed_Err_Wakeup_IRQHandler
+        [WEAK]
+  421 00000098                 EXPORT           CAN0_ORed_0_31_MB_IRQHandler   
+     [WEAK]
+  422 00000098                 EXPORT           FTM0_Ch0_7_IRQHandler        [W
+EAK]
+  423 00000098                 EXPORT           FTM0_Fault_IRQHandler        [W
+EAK]
+  424 00000098                 EXPORT           FTM0_Ovf_Reload_IRQHandler     
+   [WEAK]
+  425 00000098                 EXPORT           FTM1_Ch0_7_IRQHandler        [W
+EAK]
+  426 00000098                 EXPORT           FTM1_Fault_IRQHandler        [W
+EAK]
+  427 00000098                 EXPORT           FTM1_Ovf_Reload_IRQHandler     
+   [WEAK]
+  428 00000098                 EXPORT           FTFC_IRQHandler        [WEAK]
+  429 00000098                 EXPORT           PDB0_IRQHandler        [WEAK]
+  430 00000098                 EXPORT           LPIT0_IRQHandler        [WEAK]
+  431 00000098                 EXPORT           SCG_CMU_LVD_LVWSCG_IRQHandler  
+      [WEAK]
+  432 00000098                 EXPORT           WDOG_IRQHandler        [WEAK]
+  433 00000098                 EXPORT           RCM_IRQHandler        [WEAK]
+  434 00000098                 EXPORT           LPI2C0_Master_Slave_IRQHandler 
+       [WEAK]
+  435 00000098                 EXPORT           FLEXIO_IRQHandler        [WEAK]
+  436 00000098                 EXPORT           LPSPI0_IRQHandler        [WEAK]
+  437 00000098                 EXPORT           Reserved27_IRQHandler        [W
+EAK]
+
+
+
+ARM Macro Assembler    Page 12 
+
+
+  438 00000098                 EXPORT           ADC0_IRQHandler        [WEAK]
+  439 00000098                 EXPORT           CMP0_IRQHandler        [WEAK]
+  440 00000098                 EXPORT           LPUART1_RxTx_IRQHandler        
+[WEAK]
+  441 00000098                 EXPORT           LPUART0_RxTx_IRQHandler        
+[WEAK]
+  442 00000098         
+  443 00000098         DMA0_IRQHandler
+  444 00000098         DMA1_IRQHandler
+  445 00000098         DMA2_IRQHandler
+  446 00000098         DMA3_IRQHandler
+  447 00000098         DMA_Error_IRQHandler
+  448 00000098         ERM_fault_IRQHandler
+  449 00000098         RTC_IRQHandler
+  450 00000098         RTC_Seconds_IRQHandler
+  451 00000098         LPTMR0_IRQHandler
+  452 00000098         PORT_IRQHandler
+  453 00000098         CAN0_ORed_Err_Wakeup_IRQHandler
+  454 00000098         CAN0_ORed_0_31_MB_IRQHandler
+  455 00000098         FTM0_Ch0_7_IRQHandler
+  456 00000098         FTM0_Fault_IRQHandler
+  457 00000098         FTM0_Ovf_Reload_IRQHandler
+  458 00000098         FTM1_Ch0_7_IRQHandler
+  459 00000098         FTM1_Fault_IRQHandler
+  460 00000098         FTM1_Ovf_Reload_IRQHandler
+  461 00000098         FTFC_IRQHandler
+  462 00000098         PDB0_IRQHandler
+  463 00000098         LPIT0_IRQHandler
+  464 00000098         SCG_CMU_LVD_LVWSCG_IRQHandler
+  465 00000098         WDOG_IRQHandler
+  466 00000098         RCM_IRQHandler
+  467 00000098         LPI2C0_Master_Slave_IRQHandler
+  468 00000098         FLEXIO_IRQHandler
+  469 00000098         LPSPI0_IRQHandler
+  470 00000098         Reserved27_IRQHandler
+  471 00000098         ADC0_IRQHandler
+  472 00000098         CMP0_IRQHandler
+  473 00000098         LPUART1_RxTx_IRQHandler
+  474 00000098         LPUART0_RxTx_IRQHandler
+  475 00000098         
+  476 00000098 E7FE            B                .
+  477 0000009A         
+  478 0000009A                 ENDP
+  479 0000009A         
+  480 0000009A 00 00           ALIGN
+  481 0000009C                 END
+              00000000 
+              00000000 
+              E000ED08 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0+ --apcs=inter
+work --depend=.\objects\startup_s32k116.d -o.\objects\startup_s32k116.o -I.\RTE
+\_Sources -IC:\Keil_v5\ARM\PACK\Keil\S32K116_SDK_DFP\1.0.0\platform\devices -IC
+:\Keil_v5\ARM\CMSIS\Include --predefine="__UVISION_VERSION SETA 523" --predefin
+e="CPU_S32K116 SETA 1" --list=.\listings\startup_s32k116.lst Sources\startup_S3
+2K116.S
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 36 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: .text unused
+ADC0_IRQHandler 00000098
+
+Symbol: ADC0_IRQHandler
+   Definitions
+      At line 471 in file Sources\startup_S32K116.S
+   Uses
+      At line 173 in file Sources\startup_S32K116.S
+      At line 438 in file Sources\startup_S32K116.S
+
+CAN0_ORed_0_31_MB_IRQHandler 00000098
+
+Symbol: CAN0_ORed_0_31_MB_IRQHandler
+   Definitions
+      At line 454 in file Sources\startup_S32K116.S
+   Uses
+      At line 156 in file Sources\startup_S32K116.S
+      At line 421 in file Sources\startup_S32K116.S
+
+CAN0_ORed_Err_Wakeup_IRQHandler 00000098
+
+Symbol: CAN0_ORed_Err_Wakeup_IRQHandler
+   Definitions
+      At line 453 in file Sources\startup_S32K116.S
+   Uses
+      At line 155 in file Sources\startup_S32K116.S
+      At line 420 in file Sources\startup_S32K116.S
+
+CMP0_IRQHandler 00000098
+
+Symbol: CMP0_IRQHandler
+   Definitions
+      At line 472 in file Sources\startup_S32K116.S
+   Uses
+      At line 174 in file Sources\startup_S32K116.S
+      At line 439 in file Sources\startup_S32K116.S
+
+DMA0_IRQHandler 00000098
+
+Symbol: DMA0_IRQHandler
+   Definitions
+      At line 443 in file Sources\startup_S32K116.S
+   Uses
+      At line 145 in file Sources\startup_S32K116.S
+      At line 410 in file Sources\startup_S32K116.S
+
+DMA1_IRQHandler 00000098
+
+Symbol: DMA1_IRQHandler
+   Definitions
+      At line 444 in file Sources\startup_S32K116.S
+   Uses
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 146 in file Sources\startup_S32K116.S
+      At line 411 in file Sources\startup_S32K116.S
+
+DMA2_IRQHandler 00000098
+
+Symbol: DMA2_IRQHandler
+   Definitions
+      At line 445 in file Sources\startup_S32K116.S
+   Uses
+      At line 147 in file Sources\startup_S32K116.S
+      At line 412 in file Sources\startup_S32K116.S
+
+DMA3_IRQHandler 00000098
+
+Symbol: DMA3_IRQHandler
+   Definitions
+      At line 446 in file Sources\startup_S32K116.S
+   Uses
+      At line 148 in file Sources\startup_S32K116.S
+      At line 413 in file Sources\startup_S32K116.S
+
+DMA_Error_IRQHandler 00000098
+
+Symbol: DMA_Error_IRQHandler
+   Definitions
+      At line 447 in file Sources\startup_S32K116.S
+   Uses
+      At line 149 in file Sources\startup_S32K116.S
+      At line 414 in file Sources\startup_S32K116.S
+
+DefaultISR 00000096
+
+Symbol: DefaultISR
+   Definitions
+      At line 405 in file Sources\startup_S32K116.S
+   Uses
+      At line 406 in file Sources\startup_S32K116.S
+Comment: DefaultISR used once
+Default_Handler 00000098
+
+Symbol: Default_Handler
+   Definitions
+      At line 409 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: Default_Handler unused
+ERM_fault_IRQHandler 00000098
+
+Symbol: ERM_fault_IRQHandler
+   Definitions
+      At line 448 in file Sources\startup_S32K116.S
+   Uses
+      At line 150 in file Sources\startup_S32K116.S
+      At line 415 in file Sources\startup_S32K116.S
+
+FLEXIO_IRQHandler 00000098
+
+Symbol: FLEXIO_IRQHandler
+   Definitions
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 468 in file Sources\startup_S32K116.S
+   Uses
+      At line 170 in file Sources\startup_S32K116.S
+      At line 435 in file Sources\startup_S32K116.S
+
+FTFC_IRQHandler 00000098
+
+Symbol: FTFC_IRQHandler
+   Definitions
+      At line 461 in file Sources\startup_S32K116.S
+   Uses
+      At line 163 in file Sources\startup_S32K116.S
+      At line 428 in file Sources\startup_S32K116.S
+
+FTM0_Ch0_7_IRQHandler 00000098
+
+Symbol: FTM0_Ch0_7_IRQHandler
+   Definitions
+      At line 455 in file Sources\startup_S32K116.S
+   Uses
+      At line 157 in file Sources\startup_S32K116.S
+      At line 422 in file Sources\startup_S32K116.S
+
+FTM0_Fault_IRQHandler 00000098
+
+Symbol: FTM0_Fault_IRQHandler
+   Definitions
+      At line 456 in file Sources\startup_S32K116.S
+   Uses
+      At line 158 in file Sources\startup_S32K116.S
+      At line 423 in file Sources\startup_S32K116.S
+
+FTM0_Ovf_Reload_IRQHandler 00000098
+
+Symbol: FTM0_Ovf_Reload_IRQHandler
+   Definitions
+      At line 457 in file Sources\startup_S32K116.S
+   Uses
+      At line 159 in file Sources\startup_S32K116.S
+      At line 424 in file Sources\startup_S32K116.S
+
+FTM1_Ch0_7_IRQHandler 00000098
+
+Symbol: FTM1_Ch0_7_IRQHandler
+   Definitions
+      At line 458 in file Sources\startup_S32K116.S
+   Uses
+      At line 160 in file Sources\startup_S32K116.S
+      At line 425 in file Sources\startup_S32K116.S
+
+FTM1_Fault_IRQHandler 00000098
+
+Symbol: FTM1_Fault_IRQHandler
+   Definitions
+      At line 459 in file Sources\startup_S32K116.S
+   Uses
+      At line 161 in file Sources\startup_S32K116.S
+      At line 426 in file Sources\startup_S32K116.S
+
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Relocatable symbols
+
+FTM1_Ovf_Reload_IRQHandler 00000098
+
+Symbol: FTM1_Ovf_Reload_IRQHandler
+   Definitions
+      At line 460 in file Sources\startup_S32K116.S
+   Uses
+      At line 162 in file Sources\startup_S32K116.S
+      At line 427 in file Sources\startup_S32K116.S
+
+HardFault_Handler 0000008E
+
+Symbol: HardFault_Handler
+   Definitions
+      At line 385 in file Sources\startup_S32K116.S
+   Uses
+      At line 130 in file Sources\startup_S32K116.S
+      At line 386 in file Sources\startup_S32K116.S
+
+LC4 00000068
+
+Symbol: LC4
+   Definitions
+      At line 356 in file Sources\startup_S32K116.S
+   Uses
+      At line 360 in file Sources\startup_S32K116.S
+Comment: LC4 used once
+LC5 00000070
+
+Symbol: LC5
+   Definitions
+      At line 361 in file Sources\startup_S32K116.S
+   Uses
+      At line 352 in file Sources\startup_S32K116.S
+Comment: LC5 used once
+LPI2C0_Master_Slave_IRQHandler 00000098
+
+Symbol: LPI2C0_Master_Slave_IRQHandler
+   Definitions
+      At line 467 in file Sources\startup_S32K116.S
+   Uses
+      At line 169 in file Sources\startup_S32K116.S
+      At line 434 in file Sources\startup_S32K116.S
+
+LPIT0_IRQHandler 00000098
+
+Symbol: LPIT0_IRQHandler
+   Definitions
+      At line 463 in file Sources\startup_S32K116.S
+   Uses
+      At line 165 in file Sources\startup_S32K116.S
+      At line 430 in file Sources\startup_S32K116.S
+
+LPSPI0_IRQHandler 00000098
+
+Symbol: LPSPI0_IRQHandler
+   Definitions
+      At line 469 in file Sources\startup_S32K116.S
+   Uses
+      At line 171 in file Sources\startup_S32K116.S
+
+
+
+ARM Macro Assembler    Page 5 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 436 in file Sources\startup_S32K116.S
+
+LPTMR0_IRQHandler 00000098
+
+Symbol: LPTMR0_IRQHandler
+   Definitions
+      At line 451 in file Sources\startup_S32K116.S
+   Uses
+      At line 153 in file Sources\startup_S32K116.S
+      At line 418 in file Sources\startup_S32K116.S
+
+LPUART0_RxTx_IRQHandler 00000098
+
+Symbol: LPUART0_RxTx_IRQHandler
+   Definitions
+      At line 474 in file Sources\startup_S32K116.S
+   Uses
+      At line 176 in file Sources\startup_S32K116.S
+      At line 441 in file Sources\startup_S32K116.S
+
+LPUART1_RxTx_IRQHandler 00000098
+
+Symbol: LPUART1_RxTx_IRQHandler
+   Definitions
+      At line 473 in file Sources\startup_S32K116.S
+   Uses
+      At line 175 in file Sources\startup_S32K116.S
+      At line 440 in file Sources\startup_S32K116.S
+
+NMI_Handler 0000008C
+
+Symbol: NMI_Handler
+   Definitions
+      At line 380 in file Sources\startup_S32K116.S
+   Uses
+      At line 129 in file Sources\startup_S32K116.S
+      At line 381 in file Sources\startup_S32K116.S
+
+PDB0_IRQHandler 00000098
+
+Symbol: PDB0_IRQHandler
+   Definitions
+      At line 462 in file Sources\startup_S32K116.S
+   Uses
+      At line 164 in file Sources\startup_S32K116.S
+      At line 429 in file Sources\startup_S32K116.S
+
+PORT_IRQHandler 00000098
+
+Symbol: PORT_IRQHandler
+   Definitions
+      At line 452 in file Sources\startup_S32K116.S
+   Uses
+      At line 154 in file Sources\startup_S32K116.S
+      At line 419 in file Sources\startup_S32K116.S
+
+PendSV_Handler 00000092
+
+Symbol: PendSV_Handler
+
+
+
+ARM Macro Assembler    Page 6 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 395 in file Sources\startup_S32K116.S
+   Uses
+      At line 141 in file Sources\startup_S32K116.S
+      At line 396 in file Sources\startup_S32K116.S
+
+RCM_IRQHandler 00000098
+
+Symbol: RCM_IRQHandler
+   Definitions
+      At line 466 in file Sources\startup_S32K116.S
+   Uses
+      At line 168 in file Sources\startup_S32K116.S
+      At line 433 in file Sources\startup_S32K116.S
+
+RTC_IRQHandler 00000098
+
+Symbol: RTC_IRQHandler
+   Definitions
+      At line 449 in file Sources\startup_S32K116.S
+   Uses
+      At line 151 in file Sources\startup_S32K116.S
+      At line 416 in file Sources\startup_S32K116.S
+
+RTC_Seconds_IRQHandler 00000098
+
+Symbol: RTC_Seconds_IRQHandler
+   Definitions
+      At line 450 in file Sources\startup_S32K116.S
+   Uses
+      At line 152 in file Sources\startup_S32K116.S
+      At line 417 in file Sources\startup_S32K116.S
+
+Reserved27_IRQHandler 00000098
+
+Symbol: Reserved27_IRQHandler
+   Definitions
+      At line 470 in file Sources\startup_S32K116.S
+   Uses
+      At line 172 in file Sources\startup_S32K116.S
+      At line 437 in file Sources\startup_S32K116.S
+
+Reset_Handler 00000054
+
+Symbol: Reset_Handler
+   Definitions
+      At line 333 in file Sources\startup_S32K116.S
+   Uses
+      At line 128 in file Sources\startup_S32K116.S
+      At line 335 in file Sources\startup_S32K116.S
+
+SCG_CMU_LVD_LVWSCG_IRQHandler 00000098
+
+Symbol: SCG_CMU_LVD_LVWSCG_IRQHandler
+   Definitions
+      At line 464 in file Sources\startup_S32K116.S
+   Uses
+      At line 166 in file Sources\startup_S32K116.S
+      At line 431 in file Sources\startup_S32K116.S
+
+
+
+ARM Macro Assembler    Page 7 Alphabetic symbol ordering
+Relocatable symbols
+
+
+SVC_Handler 00000090
+
+Symbol: SVC_Handler
+   Definitions
+      At line 390 in file Sources\startup_S32K116.S
+   Uses
+      At line 138 in file Sources\startup_S32K116.S
+      At line 391 in file Sources\startup_S32K116.S
+
+SysTick_Handler 00000094
+
+Symbol: SysTick_Handler
+   Definitions
+      At line 400 in file Sources\startup_S32K116.S
+   Uses
+      At line 142 in file Sources\startup_S32K116.S
+      At line 401 in file Sources\startup_S32K116.S
+
+WDOG_IRQHandler 00000098
+
+Symbol: WDOG_IRQHandler
+   Definitions
+      At line 465 in file Sources\startup_S32K116.S
+   Uses
+      At line 167 in file Sources\startup_S32K116.S
+      At line 432 in file Sources\startup_S32K116.S
+
+__BSS_END 0000002C
+
+Symbol: __BSS_END
+   Definitions
+      At line 112 in file Sources\startup_S32K116.S
+   Uses
+      At line 44 in file Sources\startup_S32K116.S
+Comment: __BSS_END used once
+__BSS_START 00000028
+
+Symbol: __BSS_START
+   Definitions
+      At line 111 in file Sources\startup_S32K116.S
+   Uses
+      At line 43 in file Sources\startup_S32K116.S
+Comment: __BSS_START used once
+__CODE_END 00000018
+
+Symbol: __CODE_END
+   Definitions
+      At line 106 in file Sources\startup_S32K116.S
+   Uses
+      At line 47 in file Sources\startup_S32K116.S
+Comment: __CODE_END used once
+__CODE_RAM 0000001C
+
+Symbol: __CODE_RAM
+   Definitions
+      At line 107 in file Sources\startup_S32K116.S
+   Uses
+      At line 48 in file Sources\startup_S32K116.S
+
+
+
+ARM Macro Assembler    Page 8 Alphabetic symbol ordering
+Relocatable symbols
+
+Comment: __CODE_RAM used once
+__CODE_RAM_END 00000024
+
+Symbol: __CODE_RAM_END
+   Definitions
+      At line 109 in file Sources\startup_S32K116.S
+   Uses
+      At line 60 in file Sources\startup_S32K116.S
+Comment: __CODE_RAM_END used once
+__CODE_RAM_START 00000020
+
+Symbol: __CODE_RAM_START
+   Definitions
+      At line 108 in file Sources\startup_S32K116.S
+   Uses
+      At line 59 in file Sources\startup_S32K116.S
+Comment: __CODE_RAM_START used once
+__CODE_ROM 00000014
+
+Symbol: __CODE_ROM
+   Definitions
+      At line 105 in file Sources\startup_S32K116.S
+   Uses
+      At line 46 in file Sources\startup_S32K116.S
+Comment: __CODE_ROM used once
+__CUSTOM_SECTION_END 00000048
+
+Symbol: __CUSTOM_SECTION_END
+   Definitions
+      At line 120 in file Sources\startup_S32K116.S
+   Uses
+      At line 58 in file Sources\startup_S32K116.S
+Comment: __CUSTOM_SECTION_END used once
+__CUSTOM_SECTION_START 00000044
+
+Symbol: __CUSTOM_SECTION_START
+   Definitions
+      At line 119 in file Sources\startup_S32K116.S
+   Uses
+      At line 57 in file Sources\startup_S32K116.S
+Comment: __CUSTOM_SECTION_START used once
+__DATA_END 00000040
+
+Symbol: __DATA_END
+   Definitions
+      At line 118 in file Sources\startup_S32K116.S
+   Uses
+      At line 51 in file Sources\startup_S32K116.S
+Comment: __DATA_END used once
+__DATA_RAM 00000030
+
+Symbol: __DATA_RAM
+   Definitions
+      At line 114 in file Sources\startup_S32K116.S
+   Uses
+      At line 52 in file Sources\startup_S32K116.S
+Comment: __DATA_RAM used once
+__DATA_RAM_END 00000038
+
+
+
+
+ARM Macro Assembler    Page 9 Alphabetic symbol ordering
+Relocatable symbols
+
+Symbol: __DATA_RAM_END
+   Definitions
+      At line 116 in file Sources\startup_S32K116.S
+   Uses
+      At line 56 in file Sources\startup_S32K116.S
+Comment: __DATA_RAM_END used once
+__DATA_RAM_START 00000034
+
+Symbol: __DATA_RAM_START
+   Definitions
+      At line 115 in file Sources\startup_S32K116.S
+   Uses
+      At line 55 in file Sources\startup_S32K116.S
+Comment: __DATA_RAM_START used once
+__DATA_ROM 0000003C
+
+Symbol: __DATA_ROM
+   Definitions
+      At line 117 in file Sources\startup_S32K116.S
+   Uses
+      At line 50 in file Sources\startup_S32K116.S
+Comment: __DATA_ROM used once
+__RAM_END 00000050
+
+Symbol: __RAM_END
+   Definitions
+      At line 124 in file Sources\startup_S32K116.S
+   Uses
+      At line 63 in file Sources\startup_S32K116.S
+      At line 348 in file Sources\startup_S32K116.S
+
+__RAM_START 0000004C
+
+Symbol: __RAM_START
+   Definitions
+      At line 122 in file Sources\startup_S32K116.S
+   Uses
+      At line 62 in file Sources\startup_S32K116.S
+      At line 346 in file Sources\startup_S32K116.S
+
+__RAM_VECTOR_TABLE_SIZE 00000000
+
+Symbol: __RAM_VECTOR_TABLE_SIZE
+   Definitions
+      At line 99 in file Sources\startup_S32K116.S
+   Uses
+      At line 39 in file Sources\startup_S32K116.S
+Comment: __RAM_VECTOR_TABLE_SIZE used once
+__VECTOR_RAM 00000004
+
+Symbol: __VECTOR_RAM
+   Definitions
+      At line 100 in file Sources\startup_S32K116.S
+   Uses
+      At line 40 in file Sources\startup_S32K116.S
+Comment: __VECTOR_RAM used once
+__VECTOR_ROM 00000008
+
+Symbol: __VECTOR_ROM
+
+
+
+ARM Macro Assembler    Page 10 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 101 in file Sources\startup_S32K116.S
+   Uses
+      At line 41 in file Sources\startup_S32K116.S
+Comment: __VECTOR_ROM used once
+__VECTOR_ROM_END 00000010
+
+Symbol: __VECTOR_ROM_END
+   Definitions
+      At line 103 in file Sources\startup_S32K116.S
+   Uses
+      At line 54 in file Sources\startup_S32K116.S
+Comment: __VECTOR_ROM_END used once
+__VECTOR_ROM_START 0000000C
+
+Symbol: __VECTOR_ROM_START
+   Definitions
+      At line 102 in file Sources\startup_S32K116.S
+   Uses
+      At line 53 in file Sources\startup_S32K116.S
+Comment: __VECTOR_ROM_START used once
+64 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 126 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: RESET unused
+__VECTOR_TABLE 00000000
+
+Symbol: __VECTOR_TABLE
+   Definitions
+      At line 127 in file Sources\startup_S32K116.S
+   Uses
+      At line 37 in file Sources\startup_S32K116.S
+      At line 179 in file Sources\startup_S32K116.S
+      At line 366 in file Sources\startup_S32K116.S
+
+__Vectors_End 000000C0
+
+Symbol: __Vectors_End
+   Definitions
+      At line 177 in file Sources\startup_S32K116.S
+   Uses
+      At line 179 in file Sources\startup_S32K116.S
+Comment: __Vectors_End used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+FlashConfig 00000000
+
+Symbol: FlashConfig
+   Definitions
+      At line 322 in file Sources\startup_S32K116.S
+   Uses
+      At line 339 in file Sources\startup_S32K116.S
+Comment: FlashConfig used once
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+BackDoorK0 000000FF
+
+Symbol: BackDoorK0
+   Definitions
+      At line 193 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: BackDoorK0 unused
+BackDoorK1 000000FF
+
+Symbol: BackDoorK1
+   Definitions
+      At line 194 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: BackDoorK1 unused
+BackDoorK2 000000FF
+
+Symbol: BackDoorK2
+   Definitions
+      At line 195 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: BackDoorK2 unused
+BackDoorK3 000000FF
+
+Symbol: BackDoorK3
+   Definitions
+      At line 196 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: BackDoorK3 unused
+BackDoorK4 000000FF
+
+Symbol: BackDoorK4
+   Definitions
+      At line 197 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: BackDoorK4 unused
+BackDoorK5 000000FF
+
+Symbol: BackDoorK5
+   Definitions
+      At line 198 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: BackDoorK5 unused
+BackDoorK6 000000FF
+
+Symbol: BackDoorK6
+   Definitions
+      At line 199 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: BackDoorK6 unused
+BackDoorK7 000000FF
+
+Symbol: BackDoorK7
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 200 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: BackDoorK7 unused
+FDPROT 000000FF
+
+Symbol: FDPROT
+   Definitions
+      At line 274 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: FDPROT unused
+FEPROT 000000FF
+
+Symbol: FEPROT
+   Definitions
+      At line 288 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: FEPROT unused
+FOPT 000000FF
+
+Symbol: FOPT
+   Definitions
+      At line 298 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: FOPT unused
+FPROT0 000000FF
+
+Symbol: FPROT0
+   Definitions
+      At line 217 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: FPROT0 unused
+FPROT1 000000FF
+
+Symbol: FPROT1
+   Definitions
+      At line 231 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: FPROT1 unused
+FPROT2 000000FF
+
+Symbol: FPROT2
+   Definitions
+      At line 245 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: FPROT2 unused
+FPROT3 000000FF
+
+Symbol: FPROT3
+   Definitions
+      At line 259 in file Sources\startup_S32K116.S
+   Uses
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Absolute symbols
+
+      None
+Comment: FPROT3 unused
+FSEC 000000FE
+
+Symbol: FSEC
+   Definitions
+      At line 318 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: FSEC unused
+__Vectors_Size 000000C0
+
+Symbol: __Vectors_Size
+   Definitions
+      At line 179 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: __Vectors_Size unused
+nFDPROT 00000000
+
+Symbol: nFDPROT
+   Definitions
+      At line 273 in file Sources\startup_S32K116.S
+   Uses
+      At line 274 in file Sources\startup_S32K116.S
+Comment: nFDPROT used once
+nFEPROT 00000000
+
+Symbol: nFEPROT
+   Definitions
+      At line 287 in file Sources\startup_S32K116.S
+   Uses
+      At line 288 in file Sources\startup_S32K116.S
+Comment: nFEPROT used once
+nFPROT0 00000000
+
+Symbol: nFPROT0
+   Definitions
+      At line 216 in file Sources\startup_S32K116.S
+   Uses
+      At line 217 in file Sources\startup_S32K116.S
+Comment: nFPROT0 used once
+nFPROT1 00000000
+
+Symbol: nFPROT1
+   Definitions
+      At line 230 in file Sources\startup_S32K116.S
+   Uses
+      At line 231 in file Sources\startup_S32K116.S
+Comment: nFPROT1 used once
+nFPROT2 00000000
+
+Symbol: nFPROT2
+   Definitions
+      At line 244 in file Sources\startup_S32K116.S
+   Uses
+      At line 245 in file Sources\startup_S32K116.S
+Comment: nFPROT2 used once
+nFPROT3 00000000
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Absolute symbols
+
+
+Symbol: nFPROT3
+   Definitions
+      At line 258 in file Sources\startup_S32K116.S
+   Uses
+      At line 259 in file Sources\startup_S32K116.S
+Comment: nFPROT3 used once
+23 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+Image$$ARM_LIB_STACK$$Limit 00000000
+
+Symbol: Image$$ARM_LIB_STACK$$Limit
+   Definitions
+      At line 97 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: Image$$ARM_LIB_STACK$$Limit unused
+Image$$ARM_LIB_STACK$$ZI$$Limit 00000000
+
+Symbol: Image$$ARM_LIB_STACK$$ZI$$Limit
+   Definitions
+      At line 68 in file Sources\startup_S32K116.S
+   Uses
+      At line 124 in file Sources\startup_S32K116.S
+      At line 127 in file Sources\startup_S32K116.S
+
+Image$$ER_m_text$$Limit 00000000
+
+Symbol: Image$$ER_m_text$$Limit
+   Definitions
+      At line 83 in file Sources\startup_S32K116.S
+   Uses
+      At line 105 in file Sources\startup_S32K116.S
+      At line 106 in file Sources\startup_S32K116.S
+      At line 117 in file Sources\startup_S32K116.S
+      At line 118 in file Sources\startup_S32K116.S
+
+Image$$ER_m_text_const$$Base 00000000
+
+Symbol: Image$$ER_m_text_const$$Base
+   Definitions
+      At line 72 in file Sources\startup_S32K116.S
+      At line 77 in file Sources\startup_S32K116.S
+   Uses
+      None
+Warning: Image$$ER_m_text_const$$Base multiply definedComment: Image$$ER_m_text
+_const$$Base unused
+Image$$ER_m_text_const$$Limit 00000000
+
+Symbol: Image$$ER_m_text_const$$Limit
+   Definitions
+      At line 73 in file Sources\startup_S32K116.S
+      At line 78 in file Sources\startup_S32K116.S
+   Uses
+      None
+Warning: Image$$ER_m_text_const$$Limit multiply definedComment: Image$$ER_m_tex
+t_const$$Limit unused
+Image$$RW_m_code$$Base 00000000
+
+Symbol: Image$$RW_m_code$$Base
+   Definitions
+      At line 81 in file Sources\startup_S32K116.S
+   Uses
+      At line 107 in file Sources\startup_S32K116.S
+      At line 108 in file Sources\startup_S32K116.S
+
+Image$$RW_m_code$$Length 00000000
+
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+External symbols
+
+Symbol: Image$$RW_m_code$$Length
+   Definitions
+      At line 82 in file Sources\startup_S32K116.S
+   Uses
+      At line 106 in file Sources\startup_S32K116.S
+Comment: Image$$RW_m_code$$Length used once
+Image$$RW_m_code$$Limit 00000000
+
+Symbol: Image$$RW_m_code$$Limit
+   Definitions
+      At line 94 in file Sources\startup_S32K116.S
+   Uses
+      At line 109 in file Sources\startup_S32K116.S
+Comment: Image$$RW_m_code$$Limit used once
+Image$$RW_m_custom_section$$Base 00000000
+
+Symbol: Image$$RW_m_custom_section$$Base
+   Definitions
+      At line 90 in file Sources\startup_S32K116.S
+   Uses
+      At line 119 in file Sources\startup_S32K116.S
+Comment: Image$$RW_m_custom_section$$Base used once
+Image$$RW_m_custom_section$$Limit 00000000
+
+Symbol: Image$$RW_m_custom_section$$Limit
+   Definitions
+      At line 91 in file Sources\startup_S32K116.S
+   Uses
+      At line 120 in file Sources\startup_S32K116.S
+Comment: Image$$RW_m_custom_section$$Limit used once
+Image$$RW_m_data$$Base 00000000
+
+Symbol: Image$$RW_m_data$$Base
+   Definitions
+      At line 75 in file Sources\startup_S32K116.S
+   Uses
+      At line 114 in file Sources\startup_S32K116.S
+      At line 115 in file Sources\startup_S32K116.S
+
+Image$$RW_m_data$$Length 00000000
+
+Symbol: Image$$RW_m_data$$Length
+   Definitions
+      At line 80 in file Sources\startup_S32K116.S
+   Uses
+      At line 105 in file Sources\startup_S32K116.S
+      At line 106 in file Sources\startup_S32K116.S
+      At line 118 in file Sources\startup_S32K116.S
+
+Image$$RW_m_data$$Limit 00000000
+
+Symbol: Image$$RW_m_data$$Limit
+   Definitions
+      At line 93 in file Sources\startup_S32K116.S
+   Uses
+      At line 116 in file Sources\startup_S32K116.S
+Comment: Image$$RW_m_data$$Limit used once
+Image$$RW_m_data_2$$ZI$$Base 00000000
+
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+External symbols
+
+Symbol: Image$$RW_m_data_2$$ZI$$Base
+   Definitions
+      At line 69 in file Sources\startup_S32K116.S
+   Uses
+      At line 111 in file Sources\startup_S32K116.S
+Comment: Image$$RW_m_data_2$$ZI$$Base used once
+Image$$RW_m_data_2$$ZI$$Limit 00000000
+
+Symbol: Image$$RW_m_data_2$$ZI$$Limit
+   Definitions
+      At line 70 in file Sources\startup_S32K116.S
+   Uses
+      At line 112 in file Sources\startup_S32K116.S
+Comment: Image$$RW_m_data_2$$ZI$$Limit used once
+Image$$VECTOR_RAM$$Base 00000000
+
+Symbol: Image$$VECTOR_RAM$$Base
+   Definitions
+      At line 86 in file Sources\startup_S32K116.S
+   Uses
+      At line 100 in file Sources\startup_S32K116.S
+      At line 122 in file Sources\startup_S32K116.S
+
+Image$$VECTOR_RAM$$Length 00000000
+
+Symbol: Image$$VECTOR_RAM$$Length
+   Definitions
+      At line 85 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: Image$$VECTOR_RAM$$Length unused
+Image$$VECTOR_ROM$$Base 00000000
+
+Symbol: Image$$VECTOR_ROM$$Base
+   Definitions
+      At line 89 in file Sources\startup_S32K116.S
+   Uses
+      At line 101 in file Sources\startup_S32K116.S
+      At line 102 in file Sources\startup_S32K116.S
+
+Image$$VECTOR_ROM$$Length 00000000
+
+Symbol: Image$$VECTOR_ROM$$Length
+   Definitions
+      At line 88 in file Sources\startup_S32K116.S
+   Uses
+      At line 99 in file Sources\startup_S32K116.S
+Comment: Image$$VECTOR_ROM$$Length used once
+Image$$VECTOR_ROM$$Limit 00000000
+
+Symbol: Image$$VECTOR_ROM$$Limit
+   Definitions
+      At line 95 in file Sources\startup_S32K116.S
+   Uses
+      At line 103 in file Sources\startup_S32K116.S
+Comment: Image$$VECTOR_ROM$$Limit used once
+SystemInit 00000000
+
+Symbol: SystemInit
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+External symbols
+
+   Definitions
+      At line 336 in file Sources\startup_S32K116.S
+   Uses
+      At line 370 in file Sources\startup_S32K116.S
+Comment: SystemInit used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 67 in file Sources\startup_S32K116.S
+   Uses
+      At line 375 in file Sources\startup_S32K116.S
+Comment: __main used once
+init_data_bss 00000000
+
+Symbol: init_data_bss
+   Definitions
+      At line 65 in file Sources\startup_S32K116.S
+   Uses
+      At line 372 in file Sources\startup_S32K116.S
+Comment: init_data_bss used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 66 in file Sources\startup_S32K116.S
+   Uses
+      None
+Comment: main unused
+24 symbols
+455 symbols in table

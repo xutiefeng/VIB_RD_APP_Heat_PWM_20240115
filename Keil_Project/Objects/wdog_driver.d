@@ -1,0 +1,16 @@
+.\objects\wdog_driver.o: SDK\platform\drivers\src\wdog\wdog_driver.c
+.\objects\wdog_driver.o: SDK\platform\drivers\src\wdog\wdog_hw_access.h
+.\objects\wdog_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\wdog_driver.o: .\SDK\platform\drivers\inc\wdog_driver.h
+.\objects\wdog_driver.o: .\SDK\platform\devices\status.h
+.\objects\wdog_driver.o: .\SDK\platform\drivers\inc\interrupt_manager.h
+.\objects\wdog_driver.o: .\SDK\platform\devices\device_registers.h
+.\objects\wdog_driver.o: .\SDK\platform\devices\common/s32_core_cm0.h
+.\objects\wdog_driver.o: .\SDK\platform\devices\S32K116/include/S32K116.h
+.\objects\wdog_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\wdog_driver.o: .\SDK\platform\devices\S32K116/include/S32K116_features.h
+.\objects\wdog_driver.o: .\SDK\platform\devices\devassert.h
+.\objects\wdog_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\wdog_driver.o: .\SDK\platform\drivers\inc\clock_manager.h
+.\objects\wdog_driver.o: .\SDK\platform\drivers\inc\clock.h
+.\objects\wdog_driver.o: .\SDK\platform\drivers\inc\../src/clock/S32K1xx/clock_S32K1xx.h

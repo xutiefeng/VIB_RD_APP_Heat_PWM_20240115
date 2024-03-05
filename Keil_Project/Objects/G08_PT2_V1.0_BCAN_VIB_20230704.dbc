@@ -1,0 +1,914 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: VIB CDC BDC VCU SBM BCC TEL WCM GWM PSDL PSDR RHCP RSCM AMP RCC RWCM
+
+
+BO_ 147 CDC_3: 8 CDC
+ SG_ CDC_VIBWorkingSts : 26|3@0+ (1,0) [0|7] "" VIB
+ SG_ CDC_VIB_SetTemp_Feedback : 23|8@0+ (1,-40) [-10|55] "℃" VIB
+ SG_ CDC_VIB_ChildLockSt : 28|2@0+ (1,0) [0|3] "" VIB
+ SG_ CDC_VIB_dooropenReq : 29|1@0+ (1,0) [0|1] "" VIB
+ SG_ CDC_VIB_MemoryStr : 31|2@0+ (1,0) [0|3] "" VIB
+
+BO_ 798 CDC_ICM_4_B: 8 CDC
+ SG_ ICM_TotalOdometer_accurate : 31|24@0+ (0.1,0) [0|999999.9] "km" VIB
+
+BO_ 858 CDC_ACU_10_B: 8 CDC
+ SG_ ACU_Time_Year : 7|8@0+ (1,2000) [2000|2255] "y" VIB
+ SG_ ACU_Time_Month : 15|4@0+ (1,0) [1|12] "m" VIB
+ SG_ ACU_Time_Hour : 22|5@0+ (1,0) [0|23] "h" VIB
+ SG_ ACU_Time_Day : 11|5@0+ (1,0) [1|31] "d" VIB
+ SG_ ACU_Time_Min : 17|6@0+ (1,0) [0|59] "min" VIB
+ SG_ ACU_LanguageTypeSet : 37|6@0+ (1,0) [0|63] "" VIB
+ SG_ ACU_Time_Sec : 27|6@0+ (1,0) [0|59] "s" VIB
+ SG_ ACU_ThemeType : 48|1@0+ (1,0) [0|1] "-" VIB
+
+BO_ 1323 CDC_NM_BCAN: 8 CDC
+ SG_ CDC_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ CDC_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ CDC_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ CDC_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ CDC_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ CDC_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 1312 BDC_NM: 8 BDC
+ SG_ BDC_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ BDC_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ BDC_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ BDC_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ BDC_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ BDC_StayWakeupOrigin : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 1507 VCU_NM_BCAN: 8 VCU
+ SG_ VCU_B_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ VCU_B_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ VCU_B_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ VCU_B_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ VCU_B_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ VCU_B_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 792 BDC_BCM_BCAN_1: 8 BDC
+ SG_ BCM_KeySt : 1|2@0+ (1,0) [0|3] "-" VIB
+
+BO_ 1311 SBM_NM: 8 SBM
+ SG_ SBM_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ SBM_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ SBM_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ SBM_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ SBM_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ SBM_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 1332 BCC_NM: 8 BCC
+ SG_ BCC_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ BCC_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ BCC_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ BCC_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ BCC_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ BCC_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 151 TEL_2: 8 TEL
+ SG_ VIB_WorkModeSet : 50|3@0+ (1,0) [0|2] "" VIB
+ SG_ TEL_VIB_TempSetReq : 63|8@0+ (1,-40) [-10|55] "" VIB
+ SG_ TEL_VIB_TempSetReq_VD : 52|1@0+ (1,0) [0|1] "" VIB
+ SG_ VIB_WorkModeSet_VD : 51|1@0+ (1,0) [0|1] "" VIB
+
+BO_ 1325 TEL_NM_BCAN: 8 TEL
+ SG_ TEL_B_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ TEL_B_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ TEL_B_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ TEL_B_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ TEL_B_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ TEL_B_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 1352 WCM_NM_BCAN: 8 WCM
+ SG_ WCM_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ WCM_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ WCM_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ WCM_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ WCM_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ WCM_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 899 VIB_1: 8 VIB
+ SG_ VIB_WorkMode_Feedback : 1|2@0+ (1,0) [0|3] "" CDC,VCU,TEL
+ SG_ VIB_MemoryHeatStateTemp_Feedback : 15|8@0+ (1,-40) [35|55] "℃" CDC,TEL
+ SG_ VIB_MemoryCoolStateTemp_Feedback : 23|8@0+ (1,-40) [-9|15] "℃" CDC,TEL
+ SG_ VIB_SetTemp_Feedback : 31|8@0+ (1,-40) [-9|55] "℃" CDC,TEL
+ SG_ VIB_dooropenReq_Feedback : 41|2@0+ (1,0) [0|3] "" CDC,TEL
+ SG_ VIB_ChildLock_Feedback : 43|2@0+ (1,0) [0|3] "" CDC,TEL
+ SG_ VIB_FailValue : 45|2@0+ (1,0) [0|3] "" CDC,VCU,TEL
+ SG_ VIB_RunValue : 39|8@0+ (1,-40) [-9|55] "℃" CDC,TEL
+ SG_ VIB_FastCool_Feedback : 47|2@0+ (1,0) [0|3] "" CDC,TEL
+
+BO_ 1801 VIB_Phys_Diag_Rx: 8 GWM
+ SG_ VIB_Diag_Request : 7|64@0+ (1,0) [0|0] "" VIB
+
+BO_ 1929 VIB_Diag_Tx: 8 VIB
+ SG_ VIB_Diag_Response : 7|64@0+ (1,0) [0|0] "" GWM
+
+BO_ 1359 GWM_NM_BCAN: 8 GWM
+ SG_ GWM_B_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ GWM_B_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ GWM_B_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ GWM_B_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ GWM_B_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ GWM_B_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 1317 PSDL_NM: 8 PSDL
+ SG_ PSDL_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ PSDL_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ PSDL_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ PSDL_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ PSDL_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ PSDL_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 1318 PSDR_NM: 8 PSDR
+ SG_ PSDR_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ PSDR_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ PSDR_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ PSDR_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ PSDR_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ PSDR_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 1329 RHCP_NM: 8 RHCP
+ SG_ RHCP_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ RHCP_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ RHCP_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ RHCP_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ RHCP_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ RHCP_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 1340 RSCM_NM: 8 RSCM
+ SG_ RSCM_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ RSCM_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ RSCM_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ RSCM_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ RSCM_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ RSCM_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 1356 AMP_NM: 8 AMP
+ SG_ AMP_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ AMP_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ AMP_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ AMP_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ AMP_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ AMP_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 604 RCC_2: 8 RCC
+ SG_ RCC_HVAC_AutoModeBtnSt : 31|2@0+ (1,0) [0|3] "" VIB
+
+BO_ 1327 RCC_NM: 8 RCC
+ SG_ RCC_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ RCC_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ RCC_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ RCC_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ RCC_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ RCC_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+BO_ 1353 RWCM_NM_BCAN: 8 RWCM
+ SG_ RWCM_NMNodeAddress : 7|8@0+ (1,0) [0|255] "" VIB
+ SG_ RWCM_ControlBitVector : 15|8@0+ (1,0) [0|255] "" VIB
+ SG_ RWCM_WUS : 23|8@0+ (1,0) [0|255] "" VIB
+ SG_ RWCM_RepeatSts : 24|1@0+ (1,0) [0|1] "" VIB
+ SG_ RWCM_UserData1 : 31|7@0+ (1,0) [0|127] "" VIB
+ SG_ RWCM_UserData2 : 39|32@0+ (1,0) [0|4.294967295E9] "" VIB
+
+
+CM_ BO_ 899 "BCM_KeySt 在0x2：On状态时，信号类型为周期性， BCM_KeySt 不在0x2：On状态时，信号类型为事件信号 ";
+CM_ SG_ 147 CDC_VIBWorkingSts "VIB gear mode set";
+CM_ SG_ 147 CDC_VIB_SetTemp_Feedback "VIB temp set";
+CM_ SG_ 147 CDC_VIB_ChildLockSt "VIB ChildLock";
+CM_ SG_ 147 CDC_VIB_dooropenReq "VIB dooropenReq";
+CM_ SG_ 147 CDC_VIB_MemoryStr "VIB worlk mode set";
+CM_ SG_ 798 ICM_TotalOdometer_accurate "ODO value as accuracy of 0.1 km";
+CM_ SG_ 858 ACU_Time_Year "Year number";
+CM_ SG_ 858 ACU_Time_Month "Month number";
+CM_ SG_ 858 ACU_Time_Hour "Hour number";
+CM_ SG_ 858 ACU_Time_Day "Day number";
+CM_ SG_ 858 ACU_Time_Min "Minute number";
+CM_ SG_ 858 ACU_LanguageTypeSet "language type set";
+CM_ SG_ 858 ACU_Time_Sec "Second number";
+CM_ SG_ 858 ACU_ThemeType "AVNT theme type";
+CM_ SG_ 1323 CDC_NMNodeAddress "CDC node adress";
+CM_ SG_ 1323 CDC_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1323 CDC_WUS "Wake up the source";
+CM_ SG_ 1323 CDC_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1323 CDC_UserData1 "reserved";
+CM_ SG_ 1323 CDC_UserData2 "reserved1";
+CM_ SG_ 1312 BDC_NMNodeAddress "BDC node adress";
+CM_ SG_ 1312 BDC_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1312 BDC_WUS "Wake up the source";
+CM_ SG_ 1312 BDC_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1312 BDC_UserData1 "reserved";
+CM_ SG_ 1312 BDC_StayWakeupOrigin "Bit32: PM_RKE 
+Bit33: NM message request 
+Bit34: Reserved 
+Bit35: Ongoing lock/unlock action
+Bit36: PM_Learning 
+Bit37: PM_ESCL(reserved) 
+Bit38: PM_STRTMGR 
+Bit39: PM_IOMGR 
+Bit40: PM_TELEMATIC 
+Bit41: Auto relock action timer 
+Bit42: CourtesyLight active（预留） 
+Bit43: Diagnosis service is in progress 
+Bit44: Flasher request 
+Bit45: Low-beam status isn't OFF 
+Bit46: High beam status isn't OFF 
+Bit47: Position light status isn't OFF 
+Bit48: ATWS isn't in armed or partially armed or disarmed status 
+Bit49: LIN3 keep CAN 
+Bit50: LIN2 keep CAN（reserved） 
+Bit51: reserved 
+Bit52: reserved 
+Bit53: reserved 
+Bit54: reserved 
+Bit55: PM_HMI（warning MSG sending） 
+Bit56: reserved 
+Bit57: PM_Polling 
+Bit58: reserved 
+Bit59: reserved 
+Bit60: No IGN OFF 
+Bit61: reserved 
+Bit62: reserved 
+Bit63: reserved";
+CM_ SG_ 1507 VCU_B_NMNodeAddress "VCU_B node adress";
+CM_ SG_ 1507 VCU_B_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1507 VCU_B_WUS "Wake up the source";
+CM_ SG_ 1507 VCU_B_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1507 VCU_B_UserData1 "reserved";
+CM_ SG_ 1507 VCU_B_UserData2 "reserved1";
+CM_ SG_ 792 BCM_KeySt "Ignition key position status";
+CM_ SG_ 1311 SBM_NMNodeAddress "SBM node adress";
+CM_ SG_ 1311 SBM_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1311 SBM_WUS "Wake up the source";
+CM_ SG_ 1311 SBM_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1311 SBM_UserData1 "reserved";
+CM_ SG_ 1311 SBM_UserData2 "reserved1";
+CM_ SG_ 1332 BCC_NMNodeAddress "BCC node adress";
+CM_ SG_ 1332 BCC_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1332 BCC_WUS "Wake up the source";
+CM_ SG_ 1332 BCC_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1332 BCC_UserData1 "reserved";
+CM_ SG_ 1332 BCC_UserData2 "reserved1";
+CM_ SG_ 151 VIB_WorkModeSet "When APP/CDC send VIB_WorkModeSet singal request, VIB feedback VIB_power status and  VIB_HeatCoolState";
+CM_ SG_ 151 TEL_VIB_TempSetReq "When VIB_HeatState, VIB feedback last memory heat temp set value;
+When VIB_CoolState, VIB feedback last memory cool temp set value;Linear.
+-resolution: 1 per bitoffset0";
+CM_ SG_ 151 TEL_VIB_TempSetReq_VD "The request of TEL_VIB_TempSetReq on VD";
+CM_ SG_ 151 VIB_WorkModeSet_VD "The request of VIB_WorkModeSet on VD";
+CM_ SG_ 1325 TEL_B_NMNodeAddress "TEL_B node adress";
+CM_ SG_ 1325 TEL_B_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1325 TEL_B_WUS "Wake up the source";
+CM_ SG_ 1325 TEL_B_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1325 TEL_B_UserData1 "reserved";
+CM_ SG_ 1325 TEL_B_UserData2 "reserved1";
+CM_ SG_ 1352 WCM_NMNodeAddress "WCM node adress";
+CM_ SG_ 1352 WCM_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1352 WCM_WUS "Wake up the source";
+CM_ SG_ 1352 WCM_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1352 WCM_UserData1 "reserved";
+CM_ SG_ 1352 WCM_UserData2 "reserved1";
+CM_ SG_ 899 VIB_WorkMode_Feedback "When APP/CDC send VIB_WorkModeSet singal request, VIB feedback VIB_power status and  VIB_HeatCoolState";
+CM_ SG_ 899 VIB_MemoryHeatStateTemp_Feedback "When VIB_HeatState, VIB feedback last memory heat temp set value;Linear:-resolution: 1 per bit-offset:-400x0~0x4A:Invalid0x60~0xFF:Invalid";
+CM_ SG_ 899 VIB_MemoryCoolStateTemp_Feedback "When VIB_CoolState, VIB feedback last memory cool temp set value;Linear:-resolution: 1 per bit-offset:-400x0~0x1E:Invalid0x38~0xFF:Invalid";
+CM_ SG_ 899 VIB_SetTemp_Feedback "VIB feedback setting temperature Linear:-resolution: 1 per bit-offset:-400x0~0x1E:Invalid0x60~0xFF:Invalid";
+CM_ SG_ 899 VIB_dooropenReq_Feedback "When VIB door open request, VIB feedback status";
+CM_ SG_ 899 VIB_ChildLock_Feedback "When VIB ChildLock request, VIB feedback status";
+CM_ SG_ 899 VIB_FailValue "VIB run status  (run or stop), if VIB feedback fail, CDC remark present error event";
+CM_ SG_ 899 VIB_RunValue "real time temperature dataLinear:-resolution: 1 per bit-offset:-40预留，不做0x0~0x1E:Invalid0x60~0xFF:Invalid";
+CM_ SG_ 899 VIB_FastCool_Feedback "When APP/CDC send FastCool singal request, VIB feedback VIB_power status and  VIB_FastCool";
+CM_ SG_ 1801 VIB_Diag_Request "Diagnostic physical request";
+CM_ SG_ 1929 VIB_Diag_Response "VIB diagnostic response";
+CM_ SG_ 1359 GWM_B_NMNodeAddress "GWM_B node adress";
+CM_ SG_ 1359 GWM_B_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1359 GWM_B_WUS "Wake up the source";
+CM_ SG_ 1359 GWM_B_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1359 GWM_B_UserData1 "reserved";
+CM_ SG_ 1359 GWM_B_UserData2 "reserved1";
+CM_ SG_ 1317 PSDL_NMNodeAddress "PSDL node adress";
+CM_ SG_ 1317 PSDL_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1317 PSDL_WUS "Wake up the source";
+CM_ SG_ 1317 PSDL_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1317 PSDL_UserData1 "reserved";
+CM_ SG_ 1317 PSDL_UserData2 "reserved1";
+CM_ SG_ 1318 PSDR_NMNodeAddress "PSDR node adress";
+CM_ SG_ 1318 PSDR_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1318 PSDR_WUS "Wake up the source";
+CM_ SG_ 1318 PSDR_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1318 PSDR_UserData1 "reserved";
+CM_ SG_ 1318 PSDR_UserData2 "reserved1";
+CM_ SG_ 1329 RHCP_NMNodeAddress "RHCP node adress";
+CM_ SG_ 1329 RHCP_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1329 RHCP_WUS "Wake up the source";
+CM_ SG_ 1329 RHCP_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1329 RHCP_UserData1 "reserved";
+CM_ SG_ 1329 RHCP_UserData2 "reserved1";
+CM_ SG_ 1340 RSCM_NMNodeAddress "RSCM node adress";
+CM_ SG_ 1340 RSCM_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1340 RSCM_WUS "Wake up the source";
+CM_ SG_ 1340 RSCM_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1340 RSCM_UserData1 "reserved";
+CM_ SG_ 1340 RSCM_UserData2 "reserved1";
+CM_ SG_ 1356 AMP_NMNodeAddress "AMP node adress";
+CM_ SG_ 1356 AMP_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1356 AMP_WUS "Wake up the source";
+CM_ SG_ 1356 AMP_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1356 AMP_UserData1 "reserved";
+CM_ SG_ 1356 AMP_UserData2 "reserved1";
+CM_ SG_ 604 RCC_HVAC_AutoModeBtnSt "RCC:rear air conditioner automode";
+CM_ SG_ 1327 RCC_NMNodeAddress "RCC node adress";
+CM_ SG_ 1327 RCC_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1327 RCC_WUS "Wake up the source";
+CM_ SG_ 1327 RCC_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1327 RCC_UserData1 "reserved";
+CM_ SG_ 1327 RCC_UserData2 "reserved1";
+CM_ SG_ 1353 RWCM_NMNodeAddress "RWCM node adress";
+CM_ SG_ 1353 RWCM_ControlBitVector "Bit 0: Repeat Message Request Bit. The signal value is described as follows:
+0x0: The sending node does not request other nodes to enter the repeated message state
+0x1: The sending node requests other nodes to enter the repeated message state
+Bit 4: Active Wakeup Bit. The signal value is described as follows:
+0x0: The Sending node of the message does not actively wake up the network (woken up by another node)
+0x1: The node sending the message actively wakes up the network";
+CM_ SG_ 1353 RWCM_WUS "Wake up the source";
+CM_ SG_ 1353 RWCM_RepeatSts "Repeat Message status bit";
+CM_ SG_ 1353 RWCM_UserData1 "reserved";
+CM_ SG_ 1353 RWCM_UserData2 "reserved1";
+
+BA_DEF_ "NmType" STRING ;
+BA_DEF_ "VersionYear" INT 2010 2999;
+BA_DEF_ "VersionNumber" INT 0 99;
+BA_DEF_ "VersionMonth" INT 0 12;
+BA_DEF_ "VersionDay" INT 0 31;
+BA_DEF_ "ProtocolType" STRING ;
+BA_DEF_ "NmMessageCount" INT 0 255;
+BA_DEF_ "NmBaseAddress" HEX 0 2047;
+BA_DEF_ "Manufacturer" STRING ;
+BA_DEF_ "ILTxTimeout" INT 0 100;
+BA_DEF_ "DBName" STRING ;
+BA_DEF_ "BusType" STRING ;
+BA_DEF_ "Baudrate" INT 0 1000000;
+BA_DEF_ SG_ "GenSigInvalidValue" HEX 0 0;
+BA_DEF_ SG_ "GenSigStartValue" HEX 0 0;
+BA_DEF_ SG_ "GenSigInactiveValue" HEX 0 0;
+BA_DEF_ SG_ "GenSigRoutingTimeoutValue" HEX 0 0;
+BA_DEF_ SG_ "GenSigSendType" ENUM "Cycle","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType","vector_leerstring";
+BA_DEF_ SG_ "SPN" INT 0 0;
+BA_DEF_ SG_ "E2EProfile" STRING ;
+BA_DEF_ SG_ "GenSigDataID" STRING ;
+BA_DEF_ BU_ "TerminalNode" ENUM "No","Yes";
+BA_DEF_ BU_ "NodeLayerModules" STRING ;
+BA_DEF_ BU_ "NmStationAddress" HEX 0 241;
+BA_DEF_ BU_ "NmNode" ENUM "Yes","No";
+BA_DEF_ BU_ "NmCAN" INT 1 2;
+BA_DEF_ BU_ "ILUsed" ENUM "No","Yes";
+BA_DEF_ BU_ "CANoeStartDelay" INT 0 10;
+BA_DEF_ BU_ "CANoeJitterMin" INT 0 0;
+BA_DEF_ BU_ "CANoeJitterMax" INT 0 0;
+BA_DEF_ BU_ "CANoeDrift" INT 0 0;
+BA_DEF_ BU_ "CANFD_CANFD_Gateway" ENUM "Yes","No";
+BA_DEF_ BU_ "CAN_CANFD_Gateway" ENUM "Yes","No";
+BA_DEF_ BU_ "CANFD_LIN_Gateway" ENUM "Yes","No";
+BA_DEF_ BU_ "ECUDisplayName" STRING ;
+BA_DEF_ BU_ "CAN_LIN_Gateway" ENUM "Yes","No";
+BA_DEF_ BU_ "CAN_CAN_Gateway" ENUM "Yes","No";
+BA_DEF_ BU_ "BootloaderNode" ENUM "No","Yes";
+BA_DEF_ BO_ "StartDelay" INT 0 0;
+BA_DEF_ BO_ "GenMsgStartDelayTime" INT 0 0;
+BA_DEF_ BO_ "GenMsgSendType" ENUM "Cycle","NoMsgSendType","IfActive","Event","CA","CE";
+BA_DEF_ BO_ "GenMsgNrOfRepetition" INT 0 0;
+BA_DEF_ BO_ "GenMsgILSupport" ENUM "No","Yes";
+BA_DEF_ BO_ "GenMsgDelayTime" INT 0 0;
+BA_DEF_ BO_ "GenMsgCycleTimeFast" INT 0 0;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 0;
+BA_DEF_ BO_ "DiagState" ENUM "No","Yes";
+BA_DEF_ BO_ "DiagResponse" ENUM "No","Yes";
+BA_DEF_ BO_ "DiagRequest" ENUM "No","Yes";
+BA_DEF_ BO_ "NmMessage" ENUM "No","Yes";
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","StandardCAN_FD","ExtendedCAN_FD","reserved","J1939PG","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_DEF_ "NmType" "OSEK";
+BA_DEF_DEF_ "VersionYear" 2019;
+BA_DEF_DEF_ "VersionNumber" 0;
+BA_DEF_DEF_ "VersionMonth" 0;
+BA_DEF_DEF_ "VersionDay" 0;
+BA_DEF_DEF_ "ProtocolType" "CAN";
+BA_DEF_DEF_ "NmMessageCount" 128;
+BA_DEF_DEF_ "NmBaseAddress" 1024;
+BA_DEF_DEF_ "Manufacturer" "";
+BA_DEF_DEF_ "ILTxTimeout" 0;
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "BusType" "";
+BA_DEF_DEF_ "Baudrate" 500000;
+BA_DEF_DEF_ "GenSigInvalidValue" 0;
+BA_DEF_DEF_ "GenSigStartValue" 0;
+BA_DEF_DEF_ "GenSigInactiveValue" 0;
+BA_DEF_DEF_ "GenSigRoutingTimeoutValue" 0;
+BA_DEF_DEF_ "GenSigSendType" "Cycle";
+BA_DEF_DEF_ "SPN" 0;
+BA_DEF_DEF_ "E2EProfile" "";
+BA_DEF_DEF_ "GenSigDataID" "";
+BA_DEF_DEF_ "TerminalNode" "No";
+BA_DEF_DEF_ "NodeLayerModules" "OSEKNM01.dll,CANoeILNLVector.dll";
+BA_DEF_DEF_ "NmStationAddress" 0;
+BA_DEF_DEF_ "NmNode" "No";
+BA_DEF_DEF_ "NmCAN" 2;
+BA_DEF_DEF_ "ILUsed" "Yes";
+BA_DEF_DEF_ "CANoeStartDelay" 0;
+BA_DEF_DEF_ "CANoeJitterMin" 0;
+BA_DEF_DEF_ "CANoeJitterMax" 0;
+BA_DEF_DEF_ "CANoeDrift" 0;
+BA_DEF_DEF_ "CANFD_CANFD_Gateway" "No";
+BA_DEF_DEF_ "CAN_CANFD_Gateway" "No";
+BA_DEF_DEF_ "CANFD_LIN_Gateway" "No";
+BA_DEF_DEF_ "ECUDisplayName" "";
+BA_DEF_DEF_ "CAN_LIN_Gateway" "No";
+BA_DEF_DEF_ "CAN_CAN_Gateway" "No";
+BA_DEF_DEF_ "BootloaderNode" "No";
+BA_DEF_DEF_ "StartDelay" 0;
+BA_DEF_DEF_ "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_ "GenMsgSendType" "Cycle";
+BA_DEF_DEF_ "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_ "GenMsgILSupport" "Yes";
+BA_DEF_DEF_ "GenMsgDelayTime" 0;
+BA_DEF_DEF_ "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_ "GenMsgCycleTime" 100;
+BA_DEF_DEF_ "DiagState" "No";
+BA_DEF_DEF_ "DiagResponse" "No";
+BA_DEF_DEF_ "DiagRequest" "No";
+BA_DEF_DEF_ "NmMessage" "No";
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_ "BusType" "CAN";
+BA_ "ProtocolType" "CAN";
+BA_ "DBName" "BCAN";
+BA_ "Baudrate" 500000;
+BA_ "CAN_CAN_Gateway" BU_ GWM 0;
+BA_ "CANFD_CANFD_Gateway" BU_ GWM 0;
+BA_ "CAN_CANFD_Gateway" BU_ GWM 0;
+BA_ "GenMsgCycleTime" BO_ 147 0;
+BA_ "GenMsgSendType" BO_ 147 3;
+BA_ "VFrameFormat" BO_ 147 0;
+BA_ "GenMsgCycleTime" BO_ 798 500;
+BA_ "GenMsgSendType" BO_ 798 0;
+BA_ "VFrameFormat" BO_ 798 0;
+BA_ "GenMsgCycleTime" BO_ 858 500;
+BA_ "GenMsgSendType" BO_ 858 0;
+BA_ "VFrameFormat" BO_ 858 0;
+BA_ "GenMsgCycleTime" BO_ 1323 200;
+BA_ "GenMsgSendType" BO_ 1323 0;
+BA_ "VFrameFormat" BO_ 1323 0;
+BA_ "GenMsgCycleTime" BO_ 1312 200;
+BA_ "GenMsgSendType" BO_ 1312 0;
+BA_ "VFrameFormat" BO_ 1312 0;
+BA_ "GenMsgCycleTime" BO_ 1507 200;
+BA_ "GenMsgSendType" BO_ 1507 0;
+BA_ "VFrameFormat" BO_ 1507 0;
+BA_ "GenMsgCycleTime" BO_ 792 100;
+BA_ "GenMsgSendType" BO_ 792 0;
+BA_ "VFrameFormat" BO_ 792 0;
+BA_ "GenMsgCycleTime" BO_ 1311 200;
+BA_ "GenMsgSendType" BO_ 1311 0;
+BA_ "VFrameFormat" BO_ 1311 0;
+BA_ "GenMsgCycleTime" BO_ 1332 200;
+BA_ "GenMsgSendType" BO_ 1332 0;
+BA_ "VFrameFormat" BO_ 1332 0;
+BA_ "GenMsgCycleTime" BO_ 151 0;
+BA_ "GenMsgSendType" BO_ 151 3;
+BA_ "VFrameFormat" BO_ 151 0;
+BA_ "GenMsgCycleTime" BO_ 1325 200;
+BA_ "GenMsgSendType" BO_ 1325 0;
+BA_ "VFrameFormat" BO_ 1325 0;
+BA_ "GenMsgCycleTime" BO_ 1352 200;
+BA_ "GenMsgSendType" BO_ 1352 0;
+BA_ "VFrameFormat" BO_ 1352 0;
+BA_ "GenMsgCycleTime" BO_ 899 0;
+BA_ "GenMsgCycleTimeFast" BO_ 899 200;
+BA_ "GenMsgSendType" BO_ 899 3;
+BA_ "VFrameFormat" BO_ 899 0;
+BA_ "GenMsgCycleTime" BO_ 1801 0;
+BA_ "GenMsgSendType" BO_ 1801 3;
+BA_ "VFrameFormat" BO_ 1801 0;
+BA_ "GenMsgCycleTime" BO_ 1929 0;
+BA_ "GenMsgSendType" BO_ 1929 3;
+BA_ "VFrameFormat" BO_ 1929 0;
+BA_ "GenMsgCycleTime" BO_ 1359 200;
+BA_ "GenMsgSendType" BO_ 1359 0;
+BA_ "VFrameFormat" BO_ 1359 0;
+BA_ "GenMsgCycleTime" BO_ 1317 200;
+BA_ "GenMsgSendType" BO_ 1317 0;
+BA_ "VFrameFormat" BO_ 1317 0;
+BA_ "GenMsgCycleTime" BO_ 1318 200;
+BA_ "GenMsgSendType" BO_ 1318 0;
+BA_ "VFrameFormat" BO_ 1318 0;
+BA_ "GenMsgCycleTime" BO_ 1329 200;
+BA_ "GenMsgSendType" BO_ 1329 0;
+BA_ "VFrameFormat" BO_ 1329 0;
+BA_ "GenMsgCycleTime" BO_ 1340 200;
+BA_ "GenMsgSendType" BO_ 1340 0;
+BA_ "VFrameFormat" BO_ 1340 0;
+BA_ "GenMsgCycleTime" BO_ 1356 200;
+BA_ "GenMsgSendType" BO_ 1356 0;
+BA_ "VFrameFormat" BO_ 1356 0;
+BA_ "GenMsgCycleTime" BO_ 604 200;
+BA_ "GenMsgSendType" BO_ 604 4;
+BA_ "VFrameFormat" BO_ 604 0;
+BA_ "GenMsgCycleTime" BO_ 1327 200;
+BA_ "GenMsgSendType" BO_ 1327 0;
+BA_ "VFrameFormat" BO_ 1327 0;
+BA_ "GenMsgCycleTime" BO_ 1353 200;
+BA_ "GenMsgSendType" BO_ 1353 0;
+BA_ "VFrameFormat" BO_ 1353 0;
+BA_ "GenSigStartValue" SG_ 147 CDC_VIBWorkingSts 0;
+BA_ "GenSigSendType" SG_ 147 CDC_VIBWorkingSts 1;
+BA_ "GenSigStartValue" SG_ 147 CDC_VIB_SetTemp_Feedback 0;
+BA_ "GenSigSendType" SG_ 147 CDC_VIB_SetTemp_Feedback 1;
+BA_ "GenSigStartValue" SG_ 147 CDC_VIB_ChildLockSt 0;
+BA_ "GenSigSendType" SG_ 147 CDC_VIB_ChildLockSt 1;
+BA_ "GenSigStartValue" SG_ 147 CDC_VIB_dooropenReq 0;
+BA_ "GenSigSendType" SG_ 147 CDC_VIB_dooropenReq 1;
+BA_ "GenSigStartValue" SG_ 147 CDC_VIB_MemoryStr 0;
+BA_ "GenSigSendType" SG_ 147 CDC_VIB_MemoryStr 1;
+BA_ "GenSigStartValue" SG_ 798 ICM_TotalOdometer_accurate 0;
+BA_ "GenSigSendType" SG_ 798 ICM_TotalOdometer_accurate 0;
+BA_ "GenSigStartValue" SG_ 858 ACU_Time_Year 13;
+BA_ "GenSigSendType" SG_ 858 ACU_Time_Year 0;
+BA_ "GenSigStartValue" SG_ 858 ACU_Time_Month 1;
+BA_ "GenSigSendType" SG_ 858 ACU_Time_Month 0;
+BA_ "GenSigStartValue" SG_ 858 ACU_Time_Hour 1;
+BA_ "GenSigSendType" SG_ 858 ACU_Time_Hour 0;
+BA_ "GenSigStartValue" SG_ 858 ACU_Time_Day 1;
+BA_ "GenSigSendType" SG_ 858 ACU_Time_Day 0;
+BA_ "GenSigStartValue" SG_ 858 ACU_Time_Min 1;
+BA_ "GenSigSendType" SG_ 858 ACU_Time_Min 0;
+BA_ "GenSigStartValue" SG_ 858 ACU_LanguageTypeSet 1;
+BA_ "GenSigSendType" SG_ 858 ACU_LanguageTypeSet 0;
+BA_ "GenSigStartValue" SG_ 858 ACU_Time_Sec 1;
+BA_ "GenSigSendType" SG_ 858 ACU_Time_Sec 0;
+BA_ "GenSigStartValue" SG_ 858 ACU_ThemeType 0;
+BA_ "GenSigSendType" SG_ 858 ACU_ThemeType 0;
+BA_ "GenSigStartValue" SG_ 1323 CDC_NMNodeAddress 43;
+BA_ "GenSigSendType" SG_ 1323 CDC_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1323 CDC_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1323 CDC_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1323 CDC_WUS 0;
+BA_ "GenSigSendType" SG_ 1323 CDC_WUS 0;
+BA_ "GenSigStartValue" SG_ 1323 CDC_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1323 CDC_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1323 CDC_UserData1 0;
+BA_ "GenSigSendType" SG_ 1323 CDC_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1323 CDC_UserData2 0;
+BA_ "GenSigSendType" SG_ 1323 CDC_UserData2 0;
+BA_ "GenSigStartValue" SG_ 1312 BDC_NMNodeAddress 32;
+BA_ "GenSigSendType" SG_ 1312 BDC_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1312 BDC_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1312 BDC_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1312 BDC_WUS 0;
+BA_ "GenSigSendType" SG_ 1312 BDC_WUS 0;
+BA_ "GenSigStartValue" SG_ 1312 BDC_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1312 BDC_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1312 BDC_UserData1 0;
+BA_ "GenSigSendType" SG_ 1312 BDC_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1312 BDC_StayWakeupOrigin 0;
+BA_ "GenSigSendType" SG_ 1312 BDC_StayWakeupOrigin 0;
+BA_ "GenSigStartValue" SG_ 1507 VCU_B_NMNodeAddress 227;
+BA_ "GenSigSendType" SG_ 1507 VCU_B_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1507 VCU_B_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1507 VCU_B_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1507 VCU_B_WUS 0;
+BA_ "GenSigSendType" SG_ 1507 VCU_B_WUS 0;
+BA_ "GenSigStartValue" SG_ 1507 VCU_B_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1507 VCU_B_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1507 VCU_B_UserData1 0;
+BA_ "GenSigSendType" SG_ 1507 VCU_B_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1507 VCU_B_UserData2 0;
+BA_ "GenSigSendType" SG_ 1507 VCU_B_UserData2 0;
+BA_ "GenSigStartValue" SG_ 792 BCM_KeySt 0;
+BA_ "GenSigSendType" SG_ 792 BCM_KeySt 0;
+BA_ "GenSigStartValue" SG_ 1311 SBM_NMNodeAddress 31;
+BA_ "GenSigSendType" SG_ 1311 SBM_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1311 SBM_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1311 SBM_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1311 SBM_WUS 0;
+BA_ "GenSigSendType" SG_ 1311 SBM_WUS 0;
+BA_ "GenSigStartValue" SG_ 1311 SBM_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1311 SBM_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1311 SBM_UserData1 0;
+BA_ "GenSigSendType" SG_ 1311 SBM_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1311 SBM_UserData2 0;
+BA_ "GenSigSendType" SG_ 1311 SBM_UserData2 0;
+BA_ "GenSigStartValue" SG_ 1332 BCC_NMNodeAddress 52;
+BA_ "GenSigSendType" SG_ 1332 BCC_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1332 BCC_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1332 BCC_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1332 BCC_WUS 0;
+BA_ "GenSigSendType" SG_ 1332 BCC_WUS 0;
+BA_ "GenSigStartValue" SG_ 1332 BCC_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1332 BCC_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1332 BCC_UserData1 0;
+BA_ "GenSigSendType" SG_ 1332 BCC_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1332 BCC_UserData2 0;
+BA_ "GenSigSendType" SG_ 1332 BCC_UserData2 0;
+BA_ "GenSigStartValue" SG_ 151 VIB_WorkModeSet 0;
+BA_ "GenSigSendType" SG_ 151 VIB_WorkModeSet 1;
+BA_ "GenSigStartValue" SG_ 151 TEL_VIB_TempSetReq 0;
+BA_ "GenSigSendType" SG_ 151 TEL_VIB_TempSetReq 1;
+BA_ "GenSigSendType" SG_ 151 TEL_VIB_TempSetReq_VD 1;
+BA_ "GenSigStartValue" SG_ 151 VIB_WorkModeSet_VD 0;
+BA_ "GenSigSendType" SG_ 151 VIB_WorkModeSet_VD 1;
+BA_ "GenSigStartValue" SG_ 1325 TEL_B_NMNodeAddress 45;
+BA_ "GenSigSendType" SG_ 1325 TEL_B_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1325 TEL_B_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1325 TEL_B_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1325 TEL_B_WUS 0;
+BA_ "GenSigSendType" SG_ 1325 TEL_B_WUS 0;
+BA_ "GenSigStartValue" SG_ 1325 TEL_B_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1325 TEL_B_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1325 TEL_B_UserData1 0;
+BA_ "GenSigSendType" SG_ 1325 TEL_B_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1325 TEL_B_UserData2 0;
+BA_ "GenSigSendType" SG_ 1325 TEL_B_UserData2 0;
+BA_ "GenSigStartValue" SG_ 1352 WCM_NMNodeAddress 72;
+BA_ "GenSigSendType" SG_ 1352 WCM_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1352 WCM_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1352 WCM_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1352 WCM_WUS 0;
+BA_ "GenSigSendType" SG_ 1352 WCM_WUS 0;
+BA_ "GenSigStartValue" SG_ 1352 WCM_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1352 WCM_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1352 WCM_UserData1 0;
+BA_ "GenSigSendType" SG_ 1352 WCM_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1352 WCM_UserData2 0;
+BA_ "GenSigSendType" SG_ 1352 WCM_UserData2 0;
+BA_ "GenSigInvalidValue" SG_ 899 VIB_WorkMode_Feedback 3;
+BA_ "GenSigStartValue" SG_ 899 VIB_WorkMode_Feedback 0;
+BA_ "GenSigSendType" SG_ 899 VIB_WorkMode_Feedback 0;
+BA_ "GenSigStartValue" SG_ 899 VIB_MemoryHeatStateTemp_Feedback 80;
+BA_ "GenSigSendType" SG_ 899 VIB_MemoryHeatStateTemp_Feedback 0;
+BA_ "GenSigStartValue" SG_ 899 VIB_MemoryCoolStateTemp_Feedback 45;
+BA_ "GenSigSendType" SG_ 899 VIB_MemoryCoolStateTemp_Feedback 0;
+BA_ "GenSigStartValue" SG_ 899 VIB_SetTemp_Feedback 45;
+BA_ "GenSigSendType" SG_ 899 VIB_SetTemp_Feedback 0;
+BA_ "GenSigInvalidValue" SG_ 899 VIB_dooropenReq_Feedback 3;
+BA_ "GenSigStartValue" SG_ 899 VIB_dooropenReq_Feedback 0;
+BA_ "GenSigSendType" SG_ 899 VIB_dooropenReq_Feedback 0;
+BA_ "GenSigInvalidValue" SG_ 899 VIB_ChildLock_Feedback 3;
+BA_ "GenSigStartValue" SG_ 899 VIB_ChildLock_Feedback 0;
+BA_ "GenSigSendType" SG_ 899 VIB_ChildLock_Feedback 0;
+BA_ "GenSigInvalidValue" SG_ 899 VIB_FailValue 3;
+BA_ "GenSigStartValue" SG_ 899 VIB_FailValue 0;
+BA_ "GenSigSendType" SG_ 899 VIB_FailValue 0;
+BA_ "GenSigStartValue" SG_ 899 VIB_RunValue 45;
+BA_ "GenSigSendType" SG_ 899 VIB_RunValue 0;
+BA_ "GenSigInvalidValue" SG_ 899 VIB_FastCool_Feedback 3;
+BA_ "GenSigStartValue" SG_ 899 VIB_FastCool_Feedback 0;
+BA_ "GenSigSendType" SG_ 899 VIB_FastCool_Feedback 0;
+BA_ "GenSigStartValue" SG_ 1801 VIB_Diag_Request 0;
+BA_ "GenSigSendType" SG_ 1801 VIB_Diag_Request 1;
+BA_ "GenSigStartValue" SG_ 1929 VIB_Diag_Response 0;
+BA_ "GenSigInactiveValue" SG_ 1929 VIB_Diag_Response 0;
+BA_ "GenSigSendType" SG_ 1929 VIB_Diag_Response 1;
+BA_ "GenSigStartValue" SG_ 1359 GWM_B_NMNodeAddress 79;
+BA_ "GenSigSendType" SG_ 1359 GWM_B_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1359 GWM_B_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1359 GWM_B_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1359 GWM_B_WUS 0;
+BA_ "GenSigSendType" SG_ 1359 GWM_B_WUS 0;
+BA_ "GenSigStartValue" SG_ 1359 GWM_B_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1359 GWM_B_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1359 GWM_B_UserData1 0;
+BA_ "GenSigSendType" SG_ 1359 GWM_B_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1359 GWM_B_UserData2 0;
+BA_ "GenSigSendType" SG_ 1359 GWM_B_UserData2 0;
+BA_ "GenSigStartValue" SG_ 1317 PSDL_NMNodeAddress 37;
+BA_ "GenSigSendType" SG_ 1317 PSDL_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1317 PSDL_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1317 PSDL_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1317 PSDL_WUS 0;
+BA_ "GenSigSendType" SG_ 1317 PSDL_WUS 0;
+BA_ "GenSigStartValue" SG_ 1317 PSDL_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1317 PSDL_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1317 PSDL_UserData1 0;
+BA_ "GenSigSendType" SG_ 1317 PSDL_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1317 PSDL_UserData2 0;
+BA_ "GenSigSendType" SG_ 1317 PSDL_UserData2 0;
+BA_ "GenSigStartValue" SG_ 1318 PSDR_NMNodeAddress 38;
+BA_ "GenSigSendType" SG_ 1318 PSDR_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1318 PSDR_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1318 PSDR_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1318 PSDR_WUS 0;
+BA_ "GenSigSendType" SG_ 1318 PSDR_WUS 0;
+BA_ "GenSigStartValue" SG_ 1318 PSDR_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1318 PSDR_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1318 PSDR_UserData1 0;
+BA_ "GenSigSendType" SG_ 1318 PSDR_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1318 PSDR_UserData2 0;
+BA_ "GenSigSendType" SG_ 1318 PSDR_UserData2 0;
+BA_ "GenSigStartValue" SG_ 1329 RHCP_NMNodeAddress 49;
+BA_ "GenSigSendType" SG_ 1329 RHCP_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1329 RHCP_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1329 RHCP_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1329 RHCP_WUS 0;
+BA_ "GenSigSendType" SG_ 1329 RHCP_WUS 0;
+BA_ "GenSigStartValue" SG_ 1329 RHCP_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1329 RHCP_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1329 RHCP_UserData1 0;
+BA_ "GenSigSendType" SG_ 1329 RHCP_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1329 RHCP_UserData2 0;
+BA_ "GenSigSendType" SG_ 1329 RHCP_UserData2 0;
+BA_ "GenSigStartValue" SG_ 1340 RSCM_NMNodeAddress 60;
+BA_ "GenSigSendType" SG_ 1340 RSCM_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1340 RSCM_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1340 RSCM_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1340 RSCM_WUS 0;
+BA_ "GenSigSendType" SG_ 1340 RSCM_WUS 0;
+BA_ "GenSigStartValue" SG_ 1340 RSCM_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1340 RSCM_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1340 RSCM_UserData1 0;
+BA_ "GenSigSendType" SG_ 1340 RSCM_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1340 RSCM_UserData2 0;
+BA_ "GenSigSendType" SG_ 1340 RSCM_UserData2 0;
+BA_ "GenSigStartValue" SG_ 1356 AMP_NMNodeAddress 76;
+BA_ "GenSigSendType" SG_ 1356 AMP_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1356 AMP_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1356 AMP_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1356 AMP_WUS 0;
+BA_ "GenSigSendType" SG_ 1356 AMP_WUS 0;
+BA_ "GenSigStartValue" SG_ 1356 AMP_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1356 AMP_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1356 AMP_UserData1 0;
+BA_ "GenSigSendType" SG_ 1356 AMP_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1356 AMP_UserData2 0;
+BA_ "GenSigSendType" SG_ 1356 AMP_UserData2 0;
+BA_ "GenSigStartValue" SG_ 604 RCC_HVAC_AutoModeBtnSt 0;
+BA_ "GenSigSendType" SG_ 604 RCC_HVAC_AutoModeBtnSt 5;
+BA_ "GenSigStartValue" SG_ 1327 RCC_NMNodeAddress 47;
+BA_ "GenSigSendType" SG_ 1327 RCC_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1327 RCC_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1327 RCC_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1327 RCC_WUS 0;
+BA_ "GenSigSendType" SG_ 1327 RCC_WUS 0;
+BA_ "GenSigStartValue" SG_ 1327 RCC_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1327 RCC_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1327 RCC_UserData1 0;
+BA_ "GenSigSendType" SG_ 1327 RCC_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1327 RCC_UserData2 0;
+BA_ "GenSigSendType" SG_ 1327 RCC_UserData2 0;
+BA_ "GenSigStartValue" SG_ 1353 RWCM_NMNodeAddress 72;
+BA_ "GenSigSendType" SG_ 1353 RWCM_NMNodeAddress 0;
+BA_ "GenSigStartValue" SG_ 1353 RWCM_ControlBitVector 0;
+BA_ "GenSigSendType" SG_ 1353 RWCM_ControlBitVector 0;
+BA_ "GenSigStartValue" SG_ 1353 RWCM_WUS 0;
+BA_ "GenSigSendType" SG_ 1353 RWCM_WUS 0;
+BA_ "GenSigStartValue" SG_ 1353 RWCM_RepeatSts 0;
+BA_ "GenSigSendType" SG_ 1353 RWCM_RepeatSts 0;
+BA_ "GenSigStartValue" SG_ 1353 RWCM_UserData1 0;
+BA_ "GenSigSendType" SG_ 1353 RWCM_UserData1 0;
+BA_ "GenSigStartValue" SG_ 1353 RWCM_UserData2 0;
+BA_ "GenSigSendType" SG_ 1353 RWCM_UserData2 0;
+VAL_ 147 CDC_VIBWorkingSts 7 "Reserved" 6 "Reserved" 5 "Request Message" 4 "Quick cooling" 3 "Closed" 2 "Heating" 1 "cold" 0 "Not command";
+VAL_ 147 CDC_VIB_ChildLockSt 3 "reserved" 2 "close" 1 "open" 0 "No command";
+VAL_ 147 CDC_VIB_dooropenReq 1 "No command" 0 "Open";
+VAL_ 147 CDC_VIB_MemoryStr 3 "reserved" 2 "MODE2" 1 "MODE 1" 0 "No command";
+VAL_ 858 ACU_LanguageTypeSet 63 "Not used" 62 "Not used" 61 "Not used" 60 "Not used" 59 "Not used" 58 "Not used" 57 "Not used" 56 "Not used" 55 "Not used" 54 "Not used" 53 "Not used" 52 "Not used" 51 "Not used" 50 "Not used" 49 "Not used" 48 "Not used" 47 "Not used" 46 "Not used" 45 "Not used" 44 "Not used" 43 "Not used" 42 "Not used" 41 "Not used" 40 "Not used" 39 "Not used" 38 "Not used" 37 "Not used" 36 "Not used" 35 "Not used" 34 "Not used" 33 "Not used" 32 "Not used" 31 "Not used" 30 "Not used" 29 "Not used" 28 "Not used" 27 "Not used" 26 "Not used" 25 "Not used" 24 "Not used" 23 "Not used" 22 "Not used" 21 "Not used" 20 "Not used" 19 "Not used" 18 "Not used" 17 "Not used" 16 "Not used" 15 "Not used" 14 "Not used" 13 "Not used" 12 "Not used" 11 "Not used" 10 "Not used" 9 "Not used" 8 "Not used" 7 "Not used" 6 "Not used" 5 "Not used" 4 "Arabic" 3 "Russian" 2 "English" 1 "Chinese" 0 "Not used";
+VAL_ 858 ACU_ThemeType 1 "Night mode" 0 "day mode";
+VAL_ 1323 CDC_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1323 CDC_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 1312 BDC_WUS 255 "power reset" 103 "RLS" 95 "Driver seat sensor" 94 "WAL" 93 "WEL" 91 "Driver door capacitance sensor unlock" 90 "Remote key trunk unlock" 89 "RES" 88 "Panic" 87 "RR unlock" 86 "RR lock" 85 "RL unlock" 84 "RL lock" 83 "TGLock Switch" 82 "Clutch switch" 81 "Kick sensor" 80 "Start stop button" 77 "APU" 76 "SATO" 73 "brake light switch" 72 "EBS" 71 "Park light switch" 70 "Hazard switch" 69 "Park position(locked in P)switch" 66 "Netrual gear switch" 64 "P/NSwitch" 55 "Passenger door lock button" 54 "Driver door lock button" 52 "PowerSlider Right Unlock" 51 "PowerSlider Left Unlock" 50 "charging cover Sw" 49 "Autolight sw" 48 "External trunk release sw" 47 "IP Trunk release sw" 46 "Central unlock sw" 45 "Central lock sw" 43 "Key cylinder unlock Sw" 42 "Key cylinder lock Sw" 41 "Remote key door unlock" 40 "Remote key door lock" 39 "Passenger door lock status" 38 "Driver door lock status" 37 "Hood ajar" 36 "Trunk ajar" 35 "Rear right door ajar" 34 "Rear left door ajar" 33 "Passenger door ajar" 32 "Dirver door ajar" 31 "Not used" 30 "Not used" 29 "Not used" 28 "Not used" 27 "Not used" 26 "Not used" 25 "Not used" 24 "Not used" 23 "Not used" 22 "Not used" 21 "Not used" 20 "Diagnosis service" 19 "Crank" 18 "IGN ON" 17 "ACC" 4 "TPMS wake up" 2 "KL15OnOrPowerModeOn" 1 "Message wake up" 0 "defaultValue";
+VAL_ 1312 BDC_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 1507 VCU_B_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1507 VCU_B_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 792 BCM_KeySt 3 "Crank" 2 "On" 1 "Acc" 0 "Off";
+VAL_ 1311 SBM_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1311 SBM_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 1332 BCC_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1332 BCC_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 151 VIB_WorkModeSet 2 "VIB power on+VIB_Cool State" 1 "VIB power on+VIB_Heat State" 0 "VIB power off";
+VAL_ 151 TEL_VIB_TempSetReq_VD 1 "Valid" 0 "Invalid";
+VAL_ 151 VIB_WorkModeSet_VD 1 "Valid" 0 "Invalid";
+VAL_ 1325 TEL_B_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1325 TEL_B_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 1352 WCM_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1352 WCM_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 899 VIB_WorkMode_Feedback 3 "Not command" 2 "VIB power on+VIB_Cool State" 1 "VIB power on+VIB_Heat State" 0 "VIB power off";
+VAL_ 899 VIB_dooropenReq_Feedback 3 "Not command" 2 "Reserved" 1 "ON" 0 "OFF";
+VAL_ 899 VIB_ChildLock_Feedback 3 "Not command" 2 "Reserved" 1 "ON" 0 "OFF";
+VAL_ 899 VIB_FailValue 3 "Not command" 2 "Reserved" 1 "Wrong" 0 "right";
+VAL_ 899 VIB_FastCool_Feedback 3 "Not command" 2 "Reserved" 1 "VIB power on+VIB_FastCool ON" 0 "Not command";
+VAL_ 1359 GWM_B_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1359 GWM_B_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 1317 PSDL_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1317 PSDL_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 1318 PSDR_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1318 PSDR_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 1329 RHCP_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1329 RHCP_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 1340 RSCM_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1340 RSCM_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 1356 AMP_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1356 AMP_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 604 RCC_HVAC_AutoModeBtnSt 3 "Not used" 2 "off" 1 "on" 0 "No command";
+VAL_ 1327 RCC_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1327 RCC_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";
+VAL_ 1353 RWCM_WUS 255 "ECU specific" 254 "ECU specific" 253 "ECU specific" 252 "ECU specific" 251 "ECU specific" 250 "ECU specific" 249 "ECU specific" 248 "ECU specific" 247 "ECU specific" 246 "ECU specific" 245 "ECU specific" 244 "ECU specific" 243 "ECU specific" 242 "ECU specific" 241 "ECU specific" 240 "ECU specific" 239 "ECU specific" 238 "ECU specific" 237 "ECU specific" 236 "ECU specific" 235 "ECU specific" 234 "ECU specific" 233 "ECU specific" 232 "ECU specific" 231 "ECU specific" 230 "ECU specific" 229 "ECU specific" 228 "ECU specific" 227 "ECU specific" 226 "ECU specific" 225 "ECU specific" 224 "ECU specific" 223 "ECU specific" 222 "ECU specific" 221 "ECU specific" 220 "ECU specific" 219 "ECU specific" 218 "ECU specific" 217 "ECU specific" 216 "ECU specific" 215 "ECU specific" 214 "ECU specific" 213 "ECU specific" 212 "ECU specific" 211 "ECU specific" 210 "ECU specific" 209 "ECU specific" 208 "ECU specific" 207 "ECU specific" 206 "ECU specific" 205 "ECU specific" 204 "ECU specific" 203 "ECU specific" 202 "ECU specific" 201 "ECU specific" 200 "ECU specific" 199 "ECU specific" 198 "ECU specific" 197 "ECU specific" 196 "ECU specific" 195 "ECU specific" 194 "ECU specific" 193 "ECU specific" 192 "ECU specific" 191 "ECU specific" 190 "ECU specific" 189 "ECU specific" 188 "ECU specific" 187 "ECU specific" 186 "ECU specific" 185 "ECU specific" 184 "ECU specific" 183 "ECU specific" 182 "ECU specific" 181 "ECU specific" 180 "ECU specific" 179 "ECU specific" 178 "ECU specific" 177 "ECU specific" 176 "ECU specific" 175 "ECU specific" 174 "ECU specific" 173 "ECU specific" 172 "ECU specific" 171 "ECU specific" 170 "ECU specific" 169 "ECU specific" 168 "ECU specific" 167 "ECU specific" 166 "ECU specific" 165 "ECU specific" 164 "ECU specific" 163 "ECU specific" 162 "ECU specific" 161 "ECU specific" 160 "ECU specific" 159 "ECU specific" 158 "ECU specific" 157 "ECU specific" 156 "ECU specific" 155 "ECU specific" 154 "ECU specific" 153 "ECU specific" 152 "ECU specific" 151 "ECU specific" 150 "ECU specific" 149 "ECU specific" 148 "ECU specific" 147 "ECU specific" 146 "ECU specific" 145 "ECU specific" 144 "ECU specific" 143 "ECU specific" 142 "ECU specific" 141 "ECU specific" 140 "ECU specific" 139 "ECU specific" 138 "ECU specific" 137 "ECU specific" 136 "ECU specific" 135 "ECU specific" 134 "ECU specific" 133 "ECU specific" 132 "ECU specific" 131 "ECU specific" 130 "ECU specific" 129 "ECU specific" 128 "ECU specific" 127 "ECU specific" 126 "ECU specific" 125 "ECU specific" 124 "ECU specific" 123 "ECU specific" 122 "ECU specific" 121 "ECU specific" 120 "ECU specific" 119 "ECU specific" 118 "ECU specific" 117 "ECU specific" 116 "ECU specific" 115 "ECU specific" 114 "ECU specific" 113 "ECU specific" 112 "ECU specific" 111 "ECU specific" 110 "ECU specific" 109 "ECU specific" 108 "ECU specific" 107 "ECU specific" 106 "ECU specific" 105 "ECU specific" 104 "ECU specific" 103 "ECU specific" 102 "ECU specific" 101 "ECU specific" 100 "ECU specific" 99 "ECU specific" 98 "ECU specific" 97 "ECU specific" 96 "ECU specific" 95 "ECU specific" 94 "ECU specific" 93 "ECU specific" 92 "ECU specific" 91 "ECU specific" 90 "ECU specific" 89 "ECU specific" 88 "ECU specific" 87 "ECU specific" 86 "ECU specific" 85 "ECU specific" 84 "ECU specific" 83 "ECU specific" 82 "ECU specific" 81 "ECU specific" 80 "ECU specific" 79 "ECU specific" 78 "ECU specific" 77 "ECU specific" 76 "ECU specific" 75 "ECU specific" 74 "ECU specific" 73 "ECU specific" 72 "ECU specific" 71 "ECU specific" 70 "ECU specific" 69 "ECU specific" 68 "ECU specific" 67 "ECU specific" 66 "ECU specific" 65 "ECU specific" 64 "ECU specific" 63 "ECU specific" 62 "ECU specific" 61 "ECU specific" 60 "ECU specific" 59 "ECU specific" 58 "ECU specific" 57 "ECU specific" 56 "ECU specific" 55 "ECU specific" 54 "ECU specific" 53 "ECU specific" 52 "ECU specific" 51 "ECU specific" 50 "ECU specific" 49 "ECU specific" 48 "ECU specific" 47 "ECU specific" 46 "ECU specific" 45 "ECU specific" 44 "ECU specific" 43 "ECU specific" 42 "ECU specific" 41 "ECU specific" 40 "ECU specific" 39 "ECU specific" 38 "ECU specific" 37 "ECU specific" 36 "ECU specific" 35 "ECU specific" 34 "ECU specific" 33 "ECU specific" 32 "ECU specific" 31 "ECU specific" 30 "ECU specific" 29 "ECU specific" 28 "ECU specific" 27 "ECU specific" 26 "ECU specific" 25 "ECU specific" 24 "ECU specific" 23 "ECU specific" 22 "ECU specific" 21 "ECU specific" 20 "ECU specific" 19 "ECU specific" 18 "ECU specific" 17 "ECU specific" 16 "ECU specific" 10 "reserved" 9 "reserved" 8 "reserved" 7 "reserved" 6 "reserved" 5 "reserved" 4 "reserved" 3 "reserved" 2 "KL15OnOrPowerModeOn" 1 "wakedUpByNetwork" 0 "defaultValue";
+VAL_ 1353 RWCM_RepeatSts 1 "Repeat Message status" 0 "No Repeat Message status";

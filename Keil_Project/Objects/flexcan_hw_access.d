@@ -1,0 +1,15 @@
+.\objects\flexcan_hw_access.o: Sources\Hardware\flexcan_hw_access.c
+.\objects\flexcan_hw_access.o: Sources\Hardware\flexcan_hw_access.h
+.\objects\flexcan_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\flexcan_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\flexcan_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\flexcan_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\flexcan_hw_access.o: Sources\Hardware\flexcan_driver.h
+.\objects\flexcan_hw_access.o: .\SDK\platform\devices\device_registers.h
+.\objects\flexcan_hw_access.o: .\SDK\platform\devices\common/s32_core_cm0.h
+.\objects\flexcan_hw_access.o: .\SDK\platform\devices\S32K116/include/S32K116.h
+.\objects\flexcan_hw_access.o: .\SDK\platform\devices\S32K116/include/S32K116_features.h
+.\objects\flexcan_hw_access.o: .\SDK\platform\devices\devassert.h
+.\objects\flexcan_hw_access.o: .\SDK\rtos\osif\osif.h
+.\objects\flexcan_hw_access.o: .\SDK\platform\devices\status.h
+.\objects\flexcan_hw_access.o: .\SDK\platform\drivers\inc\edma_driver.h

@@ -1,0 +1,16 @@
+.\objects\lpuart_hw_access.o: Sources\Hardware\lpuart_hw_access.c
+.\objects\lpuart_hw_access.o: Sources\Hardware\lpuart_hw_access.h
+.\objects\lpuart_hw_access.o: Sources\Hardware\lpuart_driver.h
+.\objects\lpuart_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\lpuart_hw_access.o: .\SDK\platform\devices\device_registers.h
+.\objects\lpuart_hw_access.o: .\SDK\platform\devices\common/s32_core_cm0.h
+.\objects\lpuart_hw_access.o: .\SDK\platform\devices\S32K116/include/S32K116.h
+.\objects\lpuart_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lpuart_hw_access.o: .\SDK\platform\devices\S32K116/include/S32K116_features.h
+.\objects\lpuart_hw_access.o: .\SDK\platform\devices\devassert.h
+.\objects\lpuart_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\lpuart_hw_access.o: .\SDK\platform\devices\status.h
+.\objects\lpuart_hw_access.o: .\SDK\platform\drivers\inc\interrupt_manager.h
+.\objects\lpuart_hw_access.o: .\SDK\rtos\osif\osif.h
+.\objects\lpuart_hw_access.o: .\SDK\platform\drivers\inc\edma_driver.h
+.\objects\lpuart_hw_access.o: .\SDK\platform\devices\callbacks.h

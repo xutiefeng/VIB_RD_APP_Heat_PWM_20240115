@@ -1,0 +1,13 @@
+.\objects\pins_port_hw_access.o: SDK\platform\drivers\src\pins\pins_port_hw_access.c
+.\objects\pins_port_hw_access.o: SDK\platform\drivers\src\pins\pins_port_hw_access.h
+.\objects\pins_port_hw_access.o: .\SDK\platform\drivers\inc\pins_driver.h
+.\objects\pins_port_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\pins_port_hw_access.o: .\SDK\platform\devices\device_registers.h
+.\objects\pins_port_hw_access.o: .\SDK\platform\devices\common/s32_core_cm0.h
+.\objects\pins_port_hw_access.o: .\SDK\platform\devices\S32K116/include/S32K116.h
+.\objects\pins_port_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\pins_port_hw_access.o: .\SDK\platform\devices\S32K116/include/S32K116_features.h
+.\objects\pins_port_hw_access.o: .\SDK\platform\devices\devassert.h
+.\objects\pins_port_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\pins_port_hw_access.o: .\SDK\platform\devices\status.h
+.\objects\pins_port_hw_access.o: SDK\platform\drivers\src\pins\pins_gpio_hw_access.h

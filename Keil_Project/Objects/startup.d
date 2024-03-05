@@ -1,0 +1,9 @@
+.\objects\startup.o: SDK\platform\devices\startup.c
+.\objects\startup.o: SDK\platform\devices\startup.h
+.\objects\startup.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\startup.o: SDK\platform\devices\device_registers.h
+.\objects\startup.o: SDK\platform\devices\common/s32_core_cm0.h
+.\objects\startup.o: SDK\platform\devices\S32K116/include/S32K116.h
+.\objects\startup.o: SDK\platform\devices\S32K116/include/S32K116_features.h
+.\objects\startup.o: SDK\platform\devices\devassert.h
+.\objects\startup.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

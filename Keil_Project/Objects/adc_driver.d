@@ -1,0 +1,15 @@
+.\objects\adc_driver.o: SDK\platform\drivers\src\adc\adc_driver.c
+.\objects\adc_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\adc_driver.o: .\SDK\platform\drivers\inc\adc_driver.h
+.\objects\adc_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\adc_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\adc_driver.o: .\SDK\platform\devices\device_registers.h
+.\objects\adc_driver.o: .\SDK\platform\devices\common/s32_core_cm0.h
+.\objects\adc_driver.o: .\SDK\platform\devices\S32K116/include/S32K116.h
+.\objects\adc_driver.o: .\SDK\platform\devices\S32K116/include/S32K116_features.h
+.\objects\adc_driver.o: .\SDK\platform\devices\devassert.h
+.\objects\adc_driver.o: SDK\platform\drivers\src\adc\adc_hw_access.h
+.\objects\adc_driver.o: .\SDK\platform\drivers\inc\clock_manager.h
+.\objects\adc_driver.o: .\SDK\platform\drivers\inc\clock.h
+.\objects\adc_driver.o: .\SDK\platform\devices\status.h
+.\objects\adc_driver.o: .\SDK\platform\drivers\inc\../src/clock/S32K1xx/clock_S32K1xx.h

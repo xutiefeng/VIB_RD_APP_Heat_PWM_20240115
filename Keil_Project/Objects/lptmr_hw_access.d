@@ -1,0 +1,12 @@
+.\objects\lptmr_hw_access.o: SDK\platform\drivers\src\lptmr\lptmr_hw_access.c
+.\objects\lptmr_hw_access.o: SDK\platform\drivers\src\lptmr\lptmr_hw_access.h
+.\objects\lptmr_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lptmr_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\lptmr_hw_access.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\lptmr_hw_access.o: .\SDK\platform\devices\device_registers.h
+.\objects\lptmr_hw_access.o: .\SDK\platform\devices\common/s32_core_cm0.h
+.\objects\lptmr_hw_access.o: .\SDK\platform\devices\S32K116/include/S32K116.h
+.\objects\lptmr_hw_access.o: .\SDK\platform\devices\S32K116/include/S32K116_features.h
+.\objects\lptmr_hw_access.o: .\SDK\platform\devices\devassert.h
+.\objects\lptmr_hw_access.o: .\SDK\platform\drivers\inc\lptmr_driver.h
+.\objects\lptmr_hw_access.o: .\SDK\platform\devices\status.h
